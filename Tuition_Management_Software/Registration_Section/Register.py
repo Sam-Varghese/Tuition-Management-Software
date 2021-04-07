@@ -1,12 +1,10 @@
 # Python File containing program to register names, and made for the register button of main window.
 
 # Importing necessary libraries
+print('Importing necessary libraries for register button...')
 from Classes import *
-import pandas as pd
 from tkinter import ttk
 from tkinter import *
-print('Importing necessary libraries for register button...')
-
 
 def register_names():
 

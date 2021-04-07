@@ -31,7 +31,14 @@ def lf1_b1_function():
 lf1_b1 = ttk.Button(lf1, text='Register', command=lf1_b1_function)
 lf1_b1.pack(padx=5, pady=5)
 
-lf1_b2 = ttk.Button(lf1, text='Records')
+
+def lf1_b2_function():
+
+    print('Running registration records button program...')
+    from Registration_Section import Records
+    Records.access_records()
+
+lf1_b2 = ttk.Button(lf1, text='Records', command=lf1_b2_function)
 lf1_b2.pack(padx=5, pady=5)
 
 lf1_b3 = ttk.Button(lf1, text='Analysis')
