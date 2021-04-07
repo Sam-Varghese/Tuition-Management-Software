@@ -1,4 +1,4 @@
-# Tuition_Management_Software
+# Tuition_Management_Software Folder
 
 Respected sir/mam, this is a file containing information of all things that have been included in this folder named *Tuition_Management_Software*. So here is all the information:
 
