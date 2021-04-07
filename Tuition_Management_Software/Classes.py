@@ -1,13 +1,15 @@
 # Creating classes for most occuring widgets of window
 
-#Importing necessary libraries
+# Importing necessary libraries
 from tkinter import *
 
+
 def present_time_stamp():
-    
+
     import datetime
     print('Entring time: ', datetime.datetime.now())
     return datetime.datetime.now()
+
 
 class window():
 
@@ -17,7 +19,8 @@ class window():
         window_title = Label(window_name, text=title,
                              fg='white', bg='blue', font=('georgia', 25))
         window_title.grid(row=0, column=1)
-        window_name.resizable(False, False) # Restricting resizing of window to prevent change in format of contents.
+        # Restricting resizing of window to prevent change in format of contents.
+        window_name.resizable(False, False)
 
     def label(label_name, label_text, row_no, column_no):
 
@@ -25,7 +28,8 @@ class window():
         label_name['bg'] = 'blue'
         label_name['fg'] = 'white'
         label_name['font'] = ('georgia', 15)
-        label_name.grid(row=row_no, column=column_no, padx=10, pady=10,sticky='W')
+        label_name.grid(row=row_no, column=column_no,
+                        padx=10, pady=10, sticky='W')
 
     def entry(entry_name, row_no, column_no):
 
