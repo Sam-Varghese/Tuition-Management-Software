@@ -1,6 +1,6 @@
 # Registration Section
 
-Hi sir/mam , this file is just the introduction of what all things have been covered in the folder named Registration_Section , whose path is *Tuition_Management/Registration_Section*. So here is all the information:-
+Respected sir/mam , this file is just the introduction of what all things have been covered in the folder named Registration_Section , whose path is *Tuition_Management/Registration_Section*. So here is all the information:-
 
 1. Firstly , in this folder a file named [Register.py](Register.py) has been made whose main function would be make a window that would ask for details of student to get his name registered in tuition.
 2. Secondly , after his name has been registered by the program [Register.py](Register.py) , now comes [Records.py](Records.py) whose main function would be to enable the administrator to look onto the classwise/studentwise records which were taken while registration process.
