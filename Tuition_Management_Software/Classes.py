@@ -17,7 +17,8 @@ class window():
 
         window_name['background'] = 'blue'
         window_name.title(title)
-        window_title = Label(window_name, text=title, fg='white', bg='blue', font=('georgia', 25))
+        window_title = Label(window_name, text=title,
+                             fg='white', bg='blue', font=('georgia', 25))
         window_title.grid(row=0, column=1)
         # Restricting resizing of window to prevent change in format of contents.
         window_name.resizable(False, False)
