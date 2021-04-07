@@ -47,3 +47,7 @@ This project would be requiring just the knowledge of tkinter, python, pandas, m
 ## Procedure To Contribute
 
 Firstly , a big thankyou from my side , if you are wishing to help me out. To contribute to this project , just clone repository, read [Structure.md](Tuition_Management_Software/Structure.md) start and making your changes in a new branch. Make a pull request and I would get your contribution.
+
+## Discussion Forum
+
+I have also set a discussion forum in order enable frequent sharing of ideas, suggestions in this project. Click [here](https://github.com/Sam-Varghese/Tuition-Management-Software/discussions) to land up at discussion forum of this repo , and please feel free to start discussions.
