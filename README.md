@@ -38,3 +38,12 @@ I , being a tuition going student and son of a tuition teacher , have seen the h
 ## Knowledge Required
 
 This project would be requiring just the knowledge of tkinter, python, pandas, matplotlib in order to understand and contribute.
+
+## Setting Up This Project In PC
+
+1. Firstly clone this repository.
+1. Now, in folder named Tuition_Management_Software, run Main_Window python file.
+
+## Procedure To Contribute
+
+Firstly , a big thankyou from my side , if you are wishing to help me out. To contribute to this project , just clone repository and make changes in a new branch. Make a pull request and I would get your contribution.
