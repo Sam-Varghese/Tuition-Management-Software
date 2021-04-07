@@ -34,3 +34,7 @@ There are many activities that tuition management involves , which can be automa
 ## Why Am I Intrested To Work On Such A Project?
 
 I , being a tuition going student and son of a tuition teacher , have seen the hardships involved in the proper management of tuitions. I saw that usually all these works require approx 3-4hrs which can be automated and be done in just seconds.
+
+## Knowledge
+
+This project would be requiring just the knowledge of tkinter, python, pandas, matplotlib in order to understand and contribute.
