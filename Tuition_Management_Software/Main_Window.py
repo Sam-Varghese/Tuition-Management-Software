@@ -1,50 +1,15 @@
 # This file would contain program for the main window of this tuition management software.
 
 # Importing necessary libraries.
-
+print('Importing necessary libraries for main window...')
 from tkinter import *
 from tkinter import ttk
-import pandas as pd
-
-# Creating classes for most occuring widgets of window
-
-
-class window():
-
-    def __init__(self, window_name, title):
-
-        window_name['background'] = 'blue'
-        window_title = Label(window_name, text=title,
-                             fg='white', bg='blue', font=('georgia', 20))
-        window_title.grid(row=0, column=1)
-
-    def label(self, label_name, label_text, row_no, column_no):
-
-        label_name['text'] = label_text
-        label_name['bg'] = 'blue'
-        label_name['fg'] = 'white'
-        label_name['font'] = ('georgia', 15)
-        label_name.grid(row=row_no, column=column_no, padx=10, pady=10)
-
-    def entry(self, entry_name, entry_text, row_no, column_no):
-
-        entry_name['bg'] = 'snow'
-        entry_name['fg'] = 'gold'
-        entry_name['font'] = ('georgia', 15)
-        entry_name.grid(row=row_no, column=column_no, padx=10, pady=10)
-
-    def combobox(self, box_name, options, row_no, column_no):
-
-        box_name['values'] = options
-        box_name['state'] = 'readonly'
-        box_name['font'] = ('georgia', 15)
-        box_name.grid(row=row_no, column=column_no, padx=10, pady=10)
+from Classes import window  # Classes is a file with a separate class for all important widgets
 
 # Preparing the main window
 
-
+print('Preparing main window...')
 main_window = Tk()
-main_window.resizable(False, False) # Restricting resizing of window to prevent change in format of contents.
 main_window_gui = window(main_window, 'Paul Classes')
 
 # Making label frames for putting buttons
@@ -54,7 +19,13 @@ main_window_gui = window(main_window, 'Paul Classes')
 lf1 = LabelFrame(main_window, text='Registration Section')
 lf1.grid(row=1, column=0, padx=10, pady=10)
 
-lf1_b1 = ttk.Button(lf1, text='Register')
+def lf1_b1_function():
+    
+    print('Running register button program...')
+    from Registration_Section import Register
+    Register.register_names()
+
+lf1_b1 = ttk.Button(lf1, text='Register',command=lf1_b1_function)
 lf1_b1.pack(padx=5,pady=5)
 
 lf1_b2 = ttk.Button(lf1, text='Records')
