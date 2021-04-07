@@ -44,6 +44,7 @@ class window():
 
 
 main_window = Tk()
+main_window.resizable(False, False) # Restricting resizing of window to prevent change in format of contents.
 main_window_gui = window(main_window, 'Paul Classes')
 
 # Making label frames for putting buttons
