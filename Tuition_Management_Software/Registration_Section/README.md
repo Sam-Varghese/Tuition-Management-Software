@@ -1,6 +1,6 @@
 # Registration Section
 
-![](Images/RegistrationSection.PNG)
+![Registration Section Window](Images/RegistrationSection.PNG)
 
 Respected sir/mam , this file is just the introduction of what all things have been covered in the folder named Registration_Section , whose path is *Tuition_Management/Registration_Section*. So here is all the information:-
 
@@ -8,7 +8,7 @@ Respected sir/mam , this file is just the introduction of what all things have b
 
 <br>
 
-![](Images/Registration.PNG)
+![Registration Form Window](Images/Registration.PNG)
 
 <br>
 
@@ -16,11 +16,11 @@ Respected sir/mam , this file is just the introduction of what all things have b
 
 3 As mentioned in the README.md of this repository, that a teacher can ask for monthly / yearly fee (ie to deposit fees every month , or give whole fees at any time , but in that present year only) , hence i have also made a combobox in [Register.py](Register.py) which would ask for the type of fee deposit pattern that the student has to follow.
 
-![](Images/fee_deposit_pattern.PNG)   
+![Fee Deposit Pattern Combobox](Images/fee_deposit_pattern.PNG)   
 
 4 Secondly , after the name has been registered by the program [Register.py](Register.py) , now comes [Records.py](Records.py) whose main function would be to enable the administrator to look onto the classwise/studentwise records which were taken while registration process.<br>
 
-![](Images/Records.PNG)
+![Registration Records Window](Images/Records.PNG)
 
 <br>
 
@@ -28,4 +28,4 @@ Respected sir/mam , this file is just the introduction of what all things have b
 
 <br>
 
-![](Images/Analysis.PNG)
+![Registration Analysis Window](Images/Analysis.PNG)
