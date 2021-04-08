@@ -7,7 +7,9 @@ from tkinter import ttk
 from tkinter import *
 import threading
 
+
 def imports():
+
     print('Importing necessary libraries for main window...')
     global Records, Analysis, Deposits, Records, Google, GeoGebra, datetime, pd, plt, string, os, pywhatkit
     print('Importing other buttons program...')
@@ -31,6 +33,8 @@ def imports():
     print('Time imported')
     import pywhatkit
     print('Pywhatkit imported')
+    print('\nCongrats , loading completed===\n')
+
 
 threading.Thread(target=imports).start()
 
@@ -55,29 +59,32 @@ def lf1_b1_function():
     Register.register_names()
 
 
-lf1_b1 = ttk.Button(lf1, text='Register', command=lf1_b1_function, cursor='wait')
+lf1_b1 = ttk.Button(lf1, text='Register',
+                    command=lf1_b1_function, cursor='wait')
 lf1_b1.pack(padx=5, pady=5)
 
 
 def lf1_b2_function():
 
     print('Running registration records button program...')
-    
+
     Records.access_records()
 
 
-lf1_b2 = ttk.Button(lf1, text='Records', command=lf1_b2_function, cursor='wait')
+lf1_b2 = ttk.Button(lf1, text='Records',
+                    command=lf1_b2_function, cursor='wait')
 lf1_b2.pack(padx=5, pady=5)
 
 
 def lf1_b3_function():
 
     print('Running registration analysis button program...')
-    
+
     Analysis.registration_analysis()
 
 
-lf1_b3 = ttk.Button(lf1, text='Analysis', command=lf1_b3_function, cursor='wait')
+lf1_b3 = ttk.Button(lf1, text='Analysis',
+                    command=lf1_b3_function, cursor='wait')
 lf1_b3.pack(padx=5, pady=5)
 
 # LabelFrame lf2 for attendance
@@ -99,22 +106,28 @@ lf2_b3.pack(padx=5, pady=5)
 lf3 = LabelFrame(main_window, text='Finance Section')
 lf3.grid(row=1, column=2, padx=10, pady=10)
 
+
 def lf3_b1_function():
-    
+
     print('Running fee deposit button...')
     from Finance_Section import Records
     Deposits.record_deposits()
 
-lf3_b1 = ttk.Button(lf3, text='Deposits', command=lf3_b1_function, cursor='wait')
+
+lf3_b1 = ttk.Button(lf3, text='Deposits',
+                    command=lf3_b1_function, cursor='wait')
 lf3_b1.pack(padx=5, pady=5)
 
+
 def lf3_b2_function():
-    
+
     print('Running fee deposit records...')
     from Finance_Section import Records
     Records.deposit_records()
 
-lf3_b2 = ttk.Button(lf3, text='Records', command=lf3_b2_function, cursor='wait')
+
+lf3_b2 = ttk.Button(lf3, text='Records',
+                    command=lf3_b2_function, cursor='wait')
 lf3_b2.pack(padx=5, pady=5)
 
 lf3_b3 = ttk.Button(lf3, text='Defaulters', cursor='wait')
@@ -125,25 +138,30 @@ lf3_b3.pack(padx=5, pady=5)
 lf4 = LabelFrame(main_window, text='Extra Softwares')
 lf4.grid(row=2, column=1, padx=10, pady=10)
 
+
 def lf4_b1_function():
-    
+
     print('Running google apps button...')
-    
+
     Google.google_window()
-    
-lf4_b1 = ttk.Button(lf4, text='Google', cursor='wait',command=lf4_b1_function)
+
+
+lf4_b1 = ttk.Button(lf4, text='Google', cursor='wait', command=lf4_b1_function)
 lf4_b1.pack(padx=5, pady=5)
 
 lf4_b2 = ttk.Button(lf4, text='Youtube', cursor='wait')
 lf4_b2.pack(padx=5, pady=5)
 
+
 def lf4_b3_function():
-    
+
     print('Running GeoGebra apps button...')
-    
+
     GeoGebra.geogebra()
 
-lf4_b3 = ttk.Button(lf4, text='GeoGebra', cursor='wait', command=lf4_b3_function)
+
+lf4_b3 = ttk.Button(lf4, text='GeoGebra', cursor='wait',
+                    command=lf4_b3_function)
 lf4_b3.pack(padx=5, pady=5)
 
 # Putting window in mainloop
