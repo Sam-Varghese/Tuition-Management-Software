@@ -1,6 +1,7 @@
 # Creating classes for most occuring widgets of window
 
 # Importing necessary libraries
+from datetime import date
 from tkinter import *
 
 
@@ -37,11 +38,21 @@ class window():
         entry_name['bg'] = 'snow'
         entry_name['fg'] = 'black'
         entry_name['font'] = ('helvetica', 15)
-        entry_name.grid(row=row_no, column=column_no, padx=5, pady=5, sticky='E')
+        entry_name.grid(row=row_no, column=column_no,
+                        padx=5, pady=5, sticky='E')
 
     def combobox(box_name, options, row_no, column_no):
 
         box_name['values'] = options
         box_name['state'] = 'readonly'
         box_name['font'] = ('georgia', 15)
-        box_name.grid(row=row_no, column=column_no, padx=5, pady=5)
+        box_name.grid(row=row_no, column=column_no, padx=5, pady=5, sticky='E')
+
+    def dateentry(dateentry_name, row_no, column_no):
+
+        from datetime import datetime
+        from tkcalendar import Calendar, DateEntry
+        dateentry_name['font'] = ('helvetica', 15)
+        dateentry_name['state']='readonly'
+        dateentry_name['width']=20
+        dateentry_name.grid(row=row_no, column=column_no, padx=5, pady=5, sticky='E')

@@ -2,7 +2,7 @@
 
 # Importing necessary libraries
 print('Importing necessary libraries for register button...')
-from tkcalendar import Calendar
+from tkcalendar import Calendar,DateEntry
 from tkinter import *
 from tkinter import ttk
 from Classes import *
@@ -103,9 +103,8 @@ def register_names():
     reg_l10 = Label(reg_lf1)
     reg_l10_gui = window.label(reg_l10, 'Date of admission: ', 9, 0)
 
-    cal=Calendar(reg_lf1, selectmode='day', year=datetime.today().year, month=datetime.today().month, day=datetime.now().day)
-    
-    cal.grid(row=9, column=1, padx=5, pady=5, sticky='E')
+    cal=DateEntry(reg_lf1)
+    cal_gui=window.dateentry(cal, 9, 1)
     
     # Making buttons for submitting data and entering more.
 

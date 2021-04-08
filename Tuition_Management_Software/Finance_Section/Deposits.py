@@ -1,7 +1,7 @@
 # This file contains program to store records of all fee depositors
 
 # Importing necessary libraries
-from tkcalendar import Calendar
+from tkcalendar import Calendar,DateEntry
 print('Importing necessary libraries for storing deposits...')
 from Classes import *
 from tkinter import ttk
@@ -42,10 +42,8 @@ def record_deposits():
     rec_depo_l3=Label(rec_depo_lf1)
     rec_depo_l3_gui=window.label(rec_depo_l3, 'Date of fee deposition: ', 2, 0)
     
-    cal = Calendar(rec_depo_lf1, selectmode='day', year=datetime.today(
-    ).year, month=datetime.today().month, day=datetime.now().day)
-
-    cal.grid(row=2, column=1, padx=5, pady=5, sticky='E')
+    cal=DateEntry(rec_depo_lf1)
+    cal_gui=window.dateentry(cal, 2,1)
     
     # Making submit button
     
