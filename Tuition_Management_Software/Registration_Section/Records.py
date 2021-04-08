@@ -31,7 +31,7 @@ def access_records():
     reg_rec_combobox1 = ttk.Combobox(reg_rec_lf1)
     reg_rec_combobox1_gui = window.combobox(reg_rec_combobox1, options, 0, 1)
 
-    reg_rec_b1 = ttk.Button(reg_rec_lf1, text='Submit')
+    reg_rec_b1 = ttk.Button(reg_rec_lf1, text='Submit', cursor='wait')
     reg_rec_b1.grid(row=0, column=2)
 
     registration_records_window.mainloop()
