@@ -11,6 +11,7 @@ Respected sir/mam , this file is just the introduction of what all things have b
 3. As mentioned in the README.md of this repository, that a teacher can ask for monthly / yearly fee (ie to deposit fees every month , or give whole fees at any time , but in that present year only) , hence i have also made a combobox in [Register.py](Register.py) which would ask for the type of fee deposit pattern that the student has to follow.
 ![Image of fee deposit pattern combobox](fee_deposit_pattern.PNG)   
 1. Secondly , after the name has been registered by the program [Register.py](Register.py) , now comes [Records.py](Records.py) whose main function would be to enable the administrator to look onto the classwise/studentwise records which were taken while registration process.<br>
-![](Records.PNG)<br>
+![](Records.PNG)
+<br>
 2. Thirdly , after name has been registered by [Register.py](Register.py) and the administrator is also able to get all information of students through [Records.py](Records.py) , now comes the [Analysis.py](Analysis.py) whose main function would be to give insight to the administrator of when and how many students are joining every month , ratio of students in respective classes and male to female ratio of every class , so that the administrator can come to know about all such important facts.<br>
 ![](Analysis.PNG)
