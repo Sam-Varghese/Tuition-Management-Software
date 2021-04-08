@@ -29,7 +29,6 @@ There are many activities that tuition management involves , which can be automa
 
 * Many tuitions are there which would ask students to give some fees every month.
 * Tuitions may also ask students to give some particualar amount of fees in a year instead of asking for monthly fees submition.
-* Tuitions may also take fees in such a way that the students who joined tuition in the first month itself should pay yearly fees , while students who joined later on , should give some fees every month.
 
 ## Why Am I Intrested To Work On Such A Project?
 

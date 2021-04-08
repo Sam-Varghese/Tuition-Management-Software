@@ -30,18 +30,18 @@ class window():
         label_name['fg'] = 'white'
         label_name['font'] = ('georgia', 15)
         label_name.grid(row=row_no, column=column_no,
-                        padx=10, pady=10, sticky='W')
+                        padx=5, pady=5, sticky='W')
 
     def entry(entry_name, row_no, column_no):
 
         entry_name['bg'] = 'snow'
         entry_name['fg'] = 'black'
         entry_name['font'] = ('helvetica', 15)
-        entry_name.grid(row=row_no, column=column_no, padx=10, pady=10)
+        entry_name.grid(row=row_no, column=column_no, padx=5, pady=5, sticky='E')
 
     def combobox(box_name, options, row_no, column_no):
 
         box_name['values'] = options
         box_name['state'] = 'readonly'
         box_name['font'] = ('georgia', 15)
-        box_name.grid(row=row_no, column=column_no, padx=10, pady=10)
+        box_name.grid(row=row_no, column=column_no, padx=5, pady=5)

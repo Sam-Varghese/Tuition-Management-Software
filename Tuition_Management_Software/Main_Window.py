@@ -72,7 +72,13 @@ lf2_b3.pack(padx=5, pady=5)
 lf3 = LabelFrame(main_window, text='Finance Section')
 lf3.grid(row=1, column=2, padx=10, pady=10)
 
-lf3_b1 = ttk.Button(lf3, text='Deposits')
+def lf3_b1_function():
+    
+    print('Running fee deposit button...')
+    from Finance_Section import Deposits
+    Deposits.record_deposits()
+
+lf3_b1 = ttk.Button(lf3, text='Deposits', command=lf3_b1_function)
 lf3_b1.pack(padx=5, pady=5)
 
 lf3_b2 = ttk.Button(lf3, text='Records')
