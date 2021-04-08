@@ -1,6 +1,6 @@
 # Registration Section
 
-![](RegistrationSection.png)
+![](RegistrationSection.PNG)
 
 Respected sir/mam , this file is just the introduction of what all things have been covered in the folder named Registration_Section , whose path is *Tuition_Management/Registration_Section*. So here is all the information:-
 

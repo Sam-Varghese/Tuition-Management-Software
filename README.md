@@ -1,6 +1,6 @@
 # Tuition-Management-Software
 
-![](MainWindow.png)
+![](MainWindow.PNG)
 
 ## Description
 
