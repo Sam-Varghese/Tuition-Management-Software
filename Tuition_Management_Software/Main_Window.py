@@ -110,7 +110,13 @@ lf4_b1.pack(padx=5, pady=5)
 lf4_b2 = ttk.Button(lf4, text='Youtube', cursor='wait')
 lf4_b2.pack(padx=5, pady=5)
 
-lf4_b3 = ttk.Button(lf4, text='GeoGebra', cursor='wait')
+def lf4_b3_function():
+    
+    print('Running GeoGebra apps button...')
+    from Extra_Softwares import GeoGebra
+    GeoGebra.geogebra()
+
+lf4_b3 = ttk.Button(lf4, text='GeoGebra', cursor='wait', command=lf4_b3_function)
 lf4_b3.pack(padx=5, pady=5)
 
 # Putting window in mainloop
