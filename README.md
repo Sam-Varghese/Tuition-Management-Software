@@ -12,16 +12,22 @@ There are many activities that tuition management involves , which can be automa
 
 ### Registration Section
 
+![Registration](https://ieee-iemcon.org/wp-content/uploads/2018/03/registration-banner.png)
+
 * Register names of new commers
 * Access the records of students , class.
 * Analyse the trend of pattern in which students are joining tuition in order to make better descisions.
 
 ### Attendance Section
 
+![Attendance image](https://www.techjockey.com/blog/wp-content/uploads/2020/05/Online-Attendance-System-for-Students_Feature.jpg)
+
 * Take the attendance of students of all classes.
 * Study the attendance records of all students in order to catch students with very low attendances.
 
 ### Finance Section
+
+![Finance Image](https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5f1e55e18ba283c9ad86684a%2F0x0.jpg)
 
 * This would include knowing the names of students who have not paid monthly/yearly fees.
 * This would also include making separate tabular records of the fees paid/dues of all students.
@@ -34,9 +40,13 @@ There are many activities that tuition management involves , which can be automa
 
 ## Why Am I Intrested To Work On Such A Project?
 
+![Student image](https://didmdw8v48h5q.cloudfront.net/wp-content/uploads/2019/12/Students-at-school-915x514-1.jpg)
+
 I , being a tuition going student and son of a tuition teacher , have seen the hardships involved in the proper management of tuitions. I saw that usually all these works require approx 3-4hrs which can be automated and be done in just seconds.
 
 ## Knowledge Required
+
+![brain image](https://i0.wp.com/www.edulastic.com/blog/wp-content/uploads/2017/04/Brain_neurons_3720x2631.jpeg?resize=550%2C389&ssl=1)
 
 This project would be requiring just the knowledge of tkinter, python, pandas, matplotlib in order to understand and contribute.
 
@@ -52,3 +62,5 @@ Firstly , a big thankyou from my side , if you are wishing to help me out. To co
 ## Discussion Forum
 
 I have also set a discussion forum in order enable frequent sharing of ideas, suggestions in this project. Click [here](https://github.com/Sam-Varghese/Tuition-Management-Software/discussions) to land up at discussion forum of this repo , and please feel free to start discussions.
+
+![Discussion](https://chronicle-vitae-production.s3.amazonaws.com/uploads/user_article/photo/2126/full_Vitae-Class_engagement.jpg)
