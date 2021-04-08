@@ -16,7 +16,7 @@ Respected sir/mam , this file is just the introduction of what all things have b
 
 3 As mentioned in the README.md of this repository, that a teacher can ask for monthly / yearly fee (ie to deposit fees every month , or give whole fees at any time , but in that present year only) , hence i have also made a combobox in [Register.py](Register.py) which would ask for the type of fee deposit pattern that the student has to follow.
 
-![Image of fee deposit pattern combobox](feeImages/_deposit_pattern.PNG)   
+![](Images/fee_deposit_pattern.PNG)   
 
 4 Secondly , after the name has been registered by the program [Register.py](Register.py) , now comes [Records.py](Records.py) whose main function would be to enable the administrator to look onto the classwise/studentwise records which were taken while registration process.<br>
 
