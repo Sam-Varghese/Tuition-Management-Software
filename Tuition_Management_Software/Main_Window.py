@@ -95,10 +95,16 @@ lf3_b3.pack(padx=5, pady=5)
 
 # LabelFrame lf4 for other useful programs
 
-lf4 = LabelFrame(main_window, text='Extras')
+lf4 = LabelFrame(main_window, text='Extra Softwares')
 lf4.grid(row=2, column=1, padx=10, pady=10)
 
-lf4_b1 = ttk.Button(lf4, text='Google', cursor='wait')
+def lf4_b1_function():
+    
+    print('Running google apps button...')
+    from Extra_Softwares import Google
+    Google.google_window()
+    
+lf4_b1 = ttk.Button(lf4, text='Google', cursor='wait',command=lf4_b1_function)
 lf4_b1.pack(padx=5, pady=5)
 
 lf4_b2 = ttk.Button(lf4, text='Youtube', cursor='wait')
