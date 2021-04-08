@@ -6,7 +6,7 @@ This file contains description of all file included in folder named Extra_Softwa
 
 <br>
 
-![](Images/google_shortcut.PNG)
+![Google Window](Images/google_shortcut.PNG)
 
 <br>
 
@@ -15,6 +15,6 @@ This file contains description of all file included in folder named Extra_Softwa
 3 Then there is a file named [GeoGebra.py](GeoGebra.py) . The main purpose of this file is to put buttons for geogebra apps.
 <br>
 
-![](Images/GeoGebra.PNG)
+![GeoGebra Window](Images/GeoGebra.PNG)
 
 <br>
