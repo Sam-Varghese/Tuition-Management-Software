@@ -1,12 +1,34 @@
 # Python File containing program to register names, and made for the register button of main window.
 
 # Importing necessary libraries
+import threading
 print('Importing necessary libraries for register button...')
-from tkcalendar import Calendar,DateEntry
 from tkinter import *
 from tkinter import ttk
 from Classes import *
-from datetime import datetime
+
+
+def imports():
+    global Calendar, DateEntry, datetime, pd, plt, string, os, pywhatkit
+    from tkcalendar import Calendar, DateEntry
+    print('Calendar, DateEntry imported')
+    from datetime import datetime
+    print('Datetime imported')
+    import pandas as pd
+    print('Pandas imported')
+    import matplotlib.pyplot as plt
+    print('Matplotlib imported')
+    import string
+    print('String imported')
+    import os
+    print('OS imported')
+    import time
+    print('Time imported')
+    import pywhatkit
+    print('Pywhatkit imported')
+
+
+threading.Thread(target=imports).start()
 
 
 def register_names():

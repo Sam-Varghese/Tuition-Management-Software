@@ -5,6 +5,27 @@ print('Importing necessary libraries for deposit records...')
 from tkinter import *
 from tkinter import ttk
 from Classes import *
+import threading
+
+
+def imports():
+    global Calendar, DateEntry, datetime, pd, plt, string, os, pywhatkit
+    from tkcalendar import Calendar, DateEntry
+    print('Calendar, DateEntry imported')
+    from datetime import datetime
+    print('Datetime imported')
+    import pandas as pd
+    print('Pandas imported')
+    import matplotlib.pyplot as plt
+    print('Matplotlib imported')
+    import string
+    print('String imported')
+    import os
+    print('OS imported')
+    import pywhatkit
+    print('Pywhatkit imported')
+    
+threading.Thread(target=imports).start()
 
 def deposit_records():
     

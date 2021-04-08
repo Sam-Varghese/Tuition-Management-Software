@@ -5,7 +5,34 @@
 from Classes import window
 from tkinter import ttk
 from tkinter import *
-print('Importing necessary libraries for main window...')
+import threading
+
+def imports():
+    print('Importing necessary libraries for main window...')
+    global Records, Analysis, Deposits, Records, Google, GeoGebra, datetime, pd, plt, string, os, pywhatkit
+    print('Importing other buttons program...')
+    from Registration_Section import Records
+    from Registration_Section import Analysis
+    from Finance_Section import Deposits
+    from Extra_Softwares import Google
+    from Extra_Softwares import GeoGebra
+    print('Button programs imported...')
+    from datetime import datetime
+    print('Datetime imported')
+    import pandas as pd
+    print('Pandas imported')
+    import matplotlib.pyplot as plt
+    print('Matplotlib imported')
+    import string
+    print('String imported')
+    import os
+    print('OS imported')
+    import time
+    print('Time imported')
+    import pywhatkit
+    print('Pywhatkit imported')
+
+threading.Thread(target=imports).start()
 
 # Preparing the main window
 
@@ -35,7 +62,7 @@ lf1_b1.pack(padx=5, pady=5)
 def lf1_b2_function():
 
     print('Running registration records button program...')
-    from Registration_Section import Records
+    
     Records.access_records()
 
 
@@ -46,7 +73,7 @@ lf1_b2.pack(padx=5, pady=5)
 def lf1_b3_function():
 
     print('Running registration analysis button program...')
-    from Registration_Section import Analysis
+    
     Analysis.registration_analysis()
 
 
@@ -75,7 +102,7 @@ lf3.grid(row=1, column=2, padx=10, pady=10)
 def lf3_b1_function():
     
     print('Running fee deposit button...')
-    from Finance_Section import Deposits
+    from Finance_Section import Records
     Deposits.record_deposits()
 
 lf3_b1 = ttk.Button(lf3, text='Deposits', command=lf3_b1_function, cursor='wait')
@@ -101,7 +128,7 @@ lf4.grid(row=2, column=1, padx=10, pady=10)
 def lf4_b1_function():
     
     print('Running google apps button...')
-    from Extra_Softwares import Google
+    
     Google.google_window()
     
 lf4_b1 = ttk.Button(lf4, text='Google', cursor='wait',command=lf4_b1_function)
@@ -113,7 +140,7 @@ lf4_b2.pack(padx=5, pady=5)
 def lf4_b3_function():
     
     print('Running GeoGebra apps button...')
-    from Extra_Softwares import GeoGebra
+    
     GeoGebra.geogebra()
 
 lf4_b3 = ttk.Button(lf4, text='GeoGebra', cursor='wait', command=lf4_b3_function)

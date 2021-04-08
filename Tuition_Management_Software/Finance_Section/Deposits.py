@@ -1,12 +1,31 @@
 # This file contains program to store records of all fee depositors
 
 # Importing necessary libraries
-from tkcalendar import Calendar,DateEntry
+import threading
 print('Importing necessary libraries for storing deposits...')
 from Classes import *
 from tkinter import ttk
 from tkinter import *
-from datetime import datetime
+
+def imports():
+    global Calendar, DateEntry, datetime, pd, plt, string, os, pywhatkit
+    from tkcalendar import Calendar,DateEntry
+    print('Calendar, DateEntry imported')
+    from datetime import datetime
+    print('Datetime imported')
+    import pandas as pd
+    print('Pandas imported')
+    import matplotlib.pyplot as plt
+    print('Matplotlib imported')
+    import string
+    print('String imported')
+    import os
+    print('OS imported')
+    import pywhatkit
+    print('Pywhatkit imported')
+
+
+threading.Thread(target=imports).start()
 
 def record_deposits():
 
