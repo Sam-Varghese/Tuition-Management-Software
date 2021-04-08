@@ -81,7 +81,13 @@ def lf3_b1_function():
 lf3_b1 = ttk.Button(lf3, text='Deposits', command=lf3_b1_function)
 lf3_b1.pack(padx=5, pady=5)
 
-lf3_b2 = ttk.Button(lf3, text='Records')
+def lf3_b2_function():
+    
+    print('Running fee deposit records...')
+    from Finance_Section import Records
+    Records.deposit_records()
+
+lf3_b2 = ttk.Button(lf3, text='Records', command=lf3_b2_function)
 lf3_b2.pack(padx=5, pady=5)
 
 lf3_b3 = ttk.Button(lf3, text='Defaulters')
