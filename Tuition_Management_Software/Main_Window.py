@@ -28,7 +28,7 @@ def lf1_b1_function():
     Register.register_names()
 
 
-lf1_b1 = ttk.Button(lf1, text='Register', command=lf1_b1_function)
+lf1_b1 = ttk.Button(lf1, text='Register', command=lf1_b1_function, cursor='wait')
 lf1_b1.pack(padx=5, pady=5)
 
 
@@ -39,7 +39,7 @@ def lf1_b2_function():
     Records.access_records()
 
 
-lf1_b2 = ttk.Button(lf1, text='Records', command=lf1_b2_function)
+lf1_b2 = ttk.Button(lf1, text='Records', command=lf1_b2_function, cursor='wait')
 lf1_b2.pack(padx=5, pady=5)
 
 
@@ -50,7 +50,7 @@ def lf1_b3_function():
     Analysis.registration_analysis()
 
 
-lf1_b3 = ttk.Button(lf1, text='Analysis', command=lf1_b3_function)
+lf1_b3 = ttk.Button(lf1, text='Analysis', command=lf1_b3_function, cursor='wait')
 lf1_b3.pack(padx=5, pady=5)
 
 # LabelFrame lf2 for attendance
@@ -58,13 +58,13 @@ lf1_b3.pack(padx=5, pady=5)
 lf2 = LabelFrame(main_window, text='Attendance Section')
 lf2.grid(row=1, column=1, padx=10, pady=10)
 
-lf2_b1 = ttk.Button(lf2, text='Attendance')
+lf2_b1 = ttk.Button(lf2, text='Attendance', cursor='wait')
 lf2_b1.pack(padx=5, pady=5)
 
-lf2_b2 = ttk.Button(lf2, text='Records')
+lf2_b2 = ttk.Button(lf2, text='Records', cursor='wait')
 lf2_b2.pack(padx=5, pady=5)
 
-lf2_b3 = ttk.Button(lf2, text='Analysis')
+lf2_b3 = ttk.Button(lf2, text='Analysis', cursor='wait')
 lf2_b3.pack(padx=5, pady=5)
 
 # LabelFrame lf3 for finance
@@ -78,7 +78,7 @@ def lf3_b1_function():
     from Finance_Section import Deposits
     Deposits.record_deposits()
 
-lf3_b1 = ttk.Button(lf3, text='Deposits', command=lf3_b1_function)
+lf3_b1 = ttk.Button(lf3, text='Deposits', command=lf3_b1_function, cursor='wait')
 lf3_b1.pack(padx=5, pady=5)
 
 def lf3_b2_function():
@@ -87,10 +87,10 @@ def lf3_b2_function():
     from Finance_Section import Records
     Records.deposit_records()
 
-lf3_b2 = ttk.Button(lf3, text='Records', command=lf3_b2_function)
+lf3_b2 = ttk.Button(lf3, text='Records', command=lf3_b2_function, cursor='wait')
 lf3_b2.pack(padx=5, pady=5)
 
-lf3_b3 = ttk.Button(lf3, text='Defaulters')
+lf3_b3 = ttk.Button(lf3, text='Defaulters', cursor='wait')
 lf3_b3.pack(padx=5, pady=5)
 
 # LabelFrame lf4 for other useful programs
@@ -98,13 +98,13 @@ lf3_b3.pack(padx=5, pady=5)
 lf4 = LabelFrame(main_window, text='Extras')
 lf4.grid(row=2, column=1, padx=10, pady=10)
 
-lf4_b1 = ttk.Button(lf4, text='Google')
+lf4_b1 = ttk.Button(lf4, text='Google', cursor='wait')
 lf4_b1.pack(padx=5, pady=5)
 
-lf4_b2 = ttk.Button(lf4, text='Youtube')
+lf4_b2 = ttk.Button(lf4, text='Youtube', cursor='wait')
 lf4_b2.pack(padx=5, pady=5)
 
-lf4_b3 = ttk.Button(lf4, text='GeoGebra')
+lf4_b3 = ttk.Button(lf4, text='GeoGebra', cursor='wait')
 lf4_b3.pack(padx=5, pady=5)
 
 # Putting window in mainloop

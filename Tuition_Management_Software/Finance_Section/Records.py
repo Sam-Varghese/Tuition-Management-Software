@@ -26,7 +26,7 @@ def deposit_records():
     depo_rec_combobox1=ttk.Combobox(depo_rec_lf1)
     depo_rec_combobox1_gui=window.combobox(depo_rec_combobox1, options, 0, 1)
     
-    depo_rec_b1=ttk.Button(depo_rec, text='Submit')
+    depo_rec_b1 = ttk.Button(depo_rec, text='Submit', cursor='wait')
     depo_rec_b1.grid(row=1, column=3, padx=5, pady=5)
     
     depo_rec.mainloop()
