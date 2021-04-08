@@ -1,5 +1,7 @@
 # Tuition-Management-Software
 
+![](MainWindow.png)
+
 ## Description
 
 This repository contains the software that would manage the general activities/works of a tuition.
