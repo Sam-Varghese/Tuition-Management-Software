@@ -57,10 +57,12 @@ main_window_gui = window(main_window, 'Paul Classes')
 
 # Making label frames for putting buttons
 
-# LabelFrame lf1 for registration
+# LabelFrame lf1 for registration section
 
 lf1 = LabelFrame(main_window, text='Registration Section')
 lf1.grid(row=1, column=0, padx=10, pady=10)
+
+# Program for registration button
 
 
 def lf1_b1_function():
@@ -74,6 +76,8 @@ lf1_b1 = ttk.Button(lf1, text='Register',
                     command=lf1_b1_function)
 lf1_b1.pack(padx=5, pady=5)
 
+# Program for registration records button
+
 
 def lf1_b2_function():
     speak('Running registration records program sir')
@@ -85,6 +89,7 @@ lf1_b2 = ttk.Button(lf1, text='Records',
                     command=lf1_b2_function)
 lf1_b2.pack(padx=5, pady=5)
 
+# Program for registration analysis button
 
 def lf1_b3_function():
     speak('Running registration analysis program sir')
@@ -97,25 +102,32 @@ lf1_b3 = ttk.Button(lf1, text='Analysis',
                     command=lf1_b3_function)
 lf1_b3.pack(padx=5, pady=5)
 
-# LabelFrame lf2 for attendance
+# LabelFrame lf2 for attendance section
 
 lf2 = LabelFrame(main_window, text='Attendance Section')
 lf2.grid(row=1, column=1, padx=10, pady=10)
 
+# Program for attendance button
+
 lf2_b1 = ttk.Button(lf2, text='Attendance')
 lf2_b1.pack(padx=5, pady=5)
+
+# Program for attendance records button
 
 lf2_b2 = ttk.Button(lf2, text='Records')
 lf2_b2.pack(padx=5, pady=5)
 
+# Program for attendance analysis button
+
 lf2_b3 = ttk.Button(lf2, text='Analysis')
 lf2_b3.pack(padx=5, pady=5)
 
-# LabelFrame lf3 for finance
+# LabelFrame lf3 for finance section
 
 lf3 = LabelFrame(main_window, text='Finance Section')
 lf3.grid(row=1, column=2, padx=10, pady=10)
 
+# Program for deposit section
 
 def lf3_b1_function():
     speak('Running fee deposit program sir')
@@ -127,6 +139,8 @@ def lf3_b1_function():
 lf3_b1 = ttk.Button(lf3, text='Deposits',
                     command=lf3_b1_function)
 lf3_b1.pack(padx=5, pady=5)
+
+# Program for fee deposit records button
 
 
 def lf3_b2_function():
@@ -140,13 +154,17 @@ lf3_b2 = ttk.Button(lf3, text='Records',
                     command=lf3_b2_function)
 lf3_b2.pack(padx=5, pady=5)
 
+# Program for fee defaulters button
+
 lf3_b3 = ttk.Button(lf3, text='Defaulters')
 lf3_b3.pack(padx=5, pady=5)
 
-# LabelFrame lf4 for other useful programs
+# LabelFrame lf4 for other extra softwares
 
 lf4 = LabelFrame(main_window, text='Extra Softwares')
 lf4.grid(row=2, column=1, padx=10, pady=10)
+
+# Program for Google
 
 
 def lf4_b1_function():
@@ -159,6 +177,7 @@ def lf4_b1_function():
 lf4_b1 = ttk.Button(lf4, text='Google', command=lf4_b1_function)
 lf4_b1.pack(padx=5, pady=5)
 
+# Program for YouTube button
 
 def lf4_b2_function():
     speak('Opening YouTube sir')
@@ -167,6 +186,8 @@ def lf4_b2_function():
 
 lf4_b2 = ttk.Button(lf4, text='Youtube', command=lf4_b2_function)
 lf4_b2.pack(padx=5, pady=5)
+
+# Program for GeoGebra button
 
 
 def lf4_b3_function():
@@ -180,6 +201,8 @@ lf4_b3 = ttk.Button(lf4, text='GeoGebra',
                     command=lf4_b3_function)  # Mainly used for scientific maths , my father uses it , so I included also
 lf4_b3.pack(padx=5, pady=5)
 
+# Program for spotify button
+
 
 def lf4_b4_function():
 
@@ -190,6 +213,8 @@ def lf4_b4_function():
 # Teachers should also listen to spotify :)
 lf4_b4 = ttk.Button(lf4, text='Spotify', command=lf4_b4_function)
 lf4_b4.pack(padx=5, pady=5)
+
+# Program for exit button
 
 
 def main_win_b1_func():
