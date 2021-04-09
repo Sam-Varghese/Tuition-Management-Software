@@ -1,3 +1,5 @@
+# This file contains program for speaking
+
 import win32api
 import pyttsx3
 
