@@ -198,7 +198,7 @@ def main_win_b1_func():
 
 
 main_win_b1 = ttk.Button(main_window, text='Exit', command=main_win_b1_func)
-main_win_b1.grid(row=3, column=1)
+main_win_b1.grid(row=3, column=1, padx=5, pady=5)
 
 # Putting window in mainloop
 
