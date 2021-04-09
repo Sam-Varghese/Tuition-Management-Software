@@ -128,12 +128,9 @@ def register_names():
     cal=DateEntry(reg_lf1)
     cal_gui=window.dateentry(cal, 9, 1)
     
-    # Making buttons for submitting data and entering more.
+    # Making buttons for submitting data.
 
     reg_b1 = ttk.Button(register_names_window, text='Submit')
-    reg_b1.grid(row=2, column=0, padx=5, pady=5)
-
-    reg_b2 = ttk.Button(register_names_window, text='Continue')
-    reg_b2.grid(row=2, column=2, padx=5, pady=5)
-
+    reg_b1.grid(row=2, column=1, padx=5, pady=5)
+    
     register_names_window.mainloop()
