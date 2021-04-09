@@ -28,7 +28,7 @@ def password():
         time.sleep(1)
         print('Checking')
 
-        if entry.get() != 'abcd':
+        if entry.get() != 'abcdef':
             dynamic_checking()
 
         else:

@@ -7,14 +7,18 @@ from tkinter import ttk
 from tkinter import *
 import threading
 
+lock = threading.Lock()
 
-def speak(text):
-    
-    def process(text):
+
+def speak(text, lock=lock):
+
+    def process(text, lock):
+        lock.acquire()
         from Speaker import speaking
         speaking(text)
+        lock.release()
 
-    threading.Thread(target=process, args=(text,)).start()
+    threading.Thread(target=process, args=(text, lock)).start()
 
 
 def imports():
@@ -34,16 +38,16 @@ threading.Thread(target=imports).start()
 
 
 def password_entry():
-    speak('Please clear program security actions')
+    speak('security checks please , please enter your password sir')
     from Security import Password_Entry
     Password_Entry.password()
 
 
 password_entry()  # This program wont go furthermore until the reccursion happening in Password_Entry.py doesnt stops and exit button has also been disabled
 
-speak('Paul classes program welcomes you here again sir')
-
 # Preparing the main window
+
+speak('Welcome sir , nice to see you again')
 
 print('Preparing main window...')
 main_window = Tk()
