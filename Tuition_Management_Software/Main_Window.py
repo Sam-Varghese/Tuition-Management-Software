@@ -219,7 +219,7 @@ lf4_b4.pack(padx=5, pady=5)
 
 def main_win_b1_func():
 
-    speak('Had aa great time with you sir , thanks for giving me a chance to serve you sir.')
+    speak('Had a great time with you sir , thanks for giving me a chance to serve you sir.')
 
 
 main_win_b1 = ttk.Button(main_window, text='Exit', command=main_win_b1_func)
