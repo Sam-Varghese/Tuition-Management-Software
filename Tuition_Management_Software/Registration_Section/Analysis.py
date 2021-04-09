@@ -40,14 +40,20 @@ def registration_analysis():
     reg_anal_win_lf1.grid(row=1, column=1, columnspan=3, padx=10, pady=10)
 
     # Asking for the type of analysis user wants
+    
+    # Monthly analysis button program
 
     reg_anal_b1 = ttk.Button(
         reg_anal_win_lf1, text='Monthly Analysis')
     reg_anal_b1.grid(row=0, column=0, padx=10, pady=10)
+    
+    # Classwise analysis button program
 
     reg_anal_b2 = ttk.Button(
         reg_anal_win_lf1, text='Classwise Analysis')
     reg_anal_b2.grid(row=0, column=1, padx=10, pady=10)
+    
+    # Genderwise analysis button program
 
     reg_anal_b3 = ttk.Button(
         reg_anal_win_lf1, text='Genderwise Analysis')
