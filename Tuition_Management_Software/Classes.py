@@ -52,7 +52,7 @@ class window():
 
         from datetime import datetime
         from tkcalendar import Calendar, DateEntry
-        dateentry_name['font'] = ('helvetica', 15)
+        dateentry_name['font'] = ('helvetica', 13)
         dateentry_name['state']='readonly'
         dateentry_name['width']=20
         dateentry_name.grid(row=row_no, column=column_no, padx=5, pady=5, sticky='E')
