@@ -1,3 +1,5 @@
 pandas  # pip install pandas
 matplotlib  # pip install matplotlib
 pywhatkit  # pip install pywhatkit
+pyttsx3
+pywin32

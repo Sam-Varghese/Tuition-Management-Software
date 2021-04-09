@@ -8,10 +8,19 @@ from tkinter import *
 import threading
 
 
+def speak(text):
+    
+    def process(text):
+        from Speaker import speaking
+        speaking(text)
+
+    threading.Thread(target=process, args=(text,)).start()
+
+
 def imports():
 
     print('Importing necessary libraries for main window...')
-    global Records, Analysis, Deposits, Records, Google, GeoGebra, datetime, pd, plt, string, os, pywhatkit
+    global Records, Analysis, Deposits, Records, Google, GeoGebra
     print('Importing other buttons program...')
     from Registration_Section import Records
     from Registration_Section import Analysis
@@ -19,33 +28,20 @@ def imports():
     from Extra_Softwares import Google
     from Extra_Softwares import GeoGebra
     print('Button programs imported...')
-    from datetime import datetime
-    print('Datetime imported')
-    import pandas as pd
-    print('Pandas imported')
-    import matplotlib.pyplot as plt
-    print('Matplotlib imported')
-    import string
-    print('String imported')
-    import os
-    print('OS imported')
-    import time
-    print('Time imported')
-    import pywhatkit
-    print('Pywhatkit imported')
-    print('\nCongrats , loading completed===\n')
 
 
 threading.Thread(target=imports).start()
 
 
 def password_entry():
-
+    speak('Please clear program security actions')
     from Security import Password_Entry
     Password_Entry.password()
 
 
 password_entry()  # This program wont go furthermore until the reccursion happening in Password_Entry.py doesnt stops and exit button has also been disabled
+
+speak('Paul classes program welcomes you here again sir')
 
 # Preparing the main window
 
@@ -62,7 +58,7 @@ lf1.grid(row=1, column=0, padx=10, pady=10)
 
 
 def lf1_b1_function():
-
+    speak('Running registration button program sir')
     print('Running register button program...')
     from Registration_Section import Register
     Register.register_names()
@@ -74,9 +70,8 @@ lf1_b1.pack(padx=5, pady=5)
 
 
 def lf1_b2_function():
-
+    speak('Running registration records program sir')
     print('Running registration records button program...')
-
     Records.access_records()
 
 
@@ -86,7 +81,7 @@ lf1_b2.pack(padx=5, pady=5)
 
 
 def lf1_b3_function():
-
+    speak('Running registration analysis program sir')
     print('Running registration analysis button program...')
 
     Analysis.registration_analysis()
@@ -117,7 +112,7 @@ lf3.grid(row=1, column=2, padx=10, pady=10)
 
 
 def lf3_b1_function():
-
+    speak('Running fee deposit program sir')
     print('Running fee deposit button...')
     from Finance_Section import Records
     Deposits.record_deposits()
@@ -129,7 +124,7 @@ lf3_b1.pack(padx=5, pady=5)
 
 
 def lf3_b2_function():
-
+    speak('Running fee deposit program sir')
     print('Running fee deposit records...')
     from Finance_Section import Records
     Records.deposit_records()
@@ -149,7 +144,7 @@ lf4.grid(row=2, column=1, padx=10, pady=10)
 
 
 def lf4_b1_function():
-
+    speak('Running google apps button sir')
     print('Running google apps button...')
 
     Google.google_window()
@@ -163,7 +158,7 @@ lf4_b2.pack(padx=5, pady=5)
 
 
 def lf4_b3_function():
-
+    speak('Running geogebra apps button sir')
     print('Running GeoGebra apps button...')
 
     GeoGebra.geogebra()
