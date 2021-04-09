@@ -41,7 +41,7 @@ threading.Thread(target=imports).start()
 
 def password_entry():
     speak('Running program security checks')
-    from Security import Password_Entry
+    from Security_Section import Password_Entry
     Password_Entry.password()
 
 
