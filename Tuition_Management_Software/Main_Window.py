@@ -157,7 +157,11 @@ def lf4_b1_function():
 lf4_b1 = ttk.Button(lf4, text='Google', command=lf4_b1_function)
 lf4_b1.pack(padx=5, pady=5)
 
-lf4_b2 = ttk.Button(lf4, text='Youtube')
+def lf4_b2_function():
+    speak('Opening YouTube sir')
+    print('Running YouTube apps button sir')
+
+lf4_b2 = ttk.Button(lf4, text='Youtube', command=lf4_b2_function)
 lf4_b2.pack(padx=5, pady=5)
 
 
@@ -167,10 +171,20 @@ def lf4_b3_function():
 
     GeoGebra.geogebra()
 
-
 lf4_b3 = ttk.Button(lf4, text='GeoGebra',
                     command=lf4_b3_function)
 lf4_b3.pack(padx=5, pady=5)
+
+def lf4_b4_function():
+    
+    speak('Opening Spotify web player sir')
+    print('Running spotify button program...')
+
+lf4_b4=ttk.Button(lf4, text='Spotify', command=lf4_b4_function) # Teachers can also listen to spotify :)
+lf4_b4.pack(padx=5, pady=5)
+
+main_win_b1=ttk.Button(main_window, text='Exit')
+main_win_b1.grid(row=3, column=1)
 
 # Putting window in mainloop
 
