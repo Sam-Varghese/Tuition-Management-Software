@@ -9,8 +9,9 @@ import threading
 
 lock = threading.Lock()
 
+# Making a function to activate the speaking function of Speaker module and to put that in a separate thread as speak function is very slow
 
-def speak(text, lock=lock):
+def speak(text, lock=lock): # put thread locking as speak fuctions simultaneously executing produces errors
 
     def process(text, lock):
         lock.acquire()
@@ -180,7 +181,7 @@ def lf4_b4_function():
     speak('Opening Spotify web player sir')
     print('Running spotify button program...')
 
-lf4_b4=ttk.Button(lf4, text='Spotify', command=lf4_b4_function) # Teachers can also listen to spotify :)
+lf4_b4=ttk.Button(lf4, text='Spotify', command=lf4_b4_function) # Teachers should also listen to spotify :)
 lf4_b4.pack(padx=5, pady=5)
 
 main_win_b1=ttk.Button(main_window, text='Exit')
