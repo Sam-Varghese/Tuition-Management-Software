@@ -173,7 +173,7 @@ def lf4_b3_function():
     GeoGebra.geogebra()
 
 lf4_b3 = ttk.Button(lf4, text='GeoGebra',
-                    command=lf4_b3_function)
+                    command=lf4_b3_function) # Mainly used for scientific maths , my father uses it , so I included also
 lf4_b3.pack(padx=5, pady=5)
 
 def lf4_b4_function():
