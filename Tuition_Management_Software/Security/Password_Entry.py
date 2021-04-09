@@ -18,6 +18,7 @@ def password():
 
     entry = Entry(pass_win, bd=10, font=('georgia', 25), show='*')
     entry.grid(row=1, column=0, columnspan=3, padx=5, pady=5)
+    entry.focus_set()
 
     # code to disable exit button
     pass_win.protocol("WM_DELETE_WINDOW", disable_event)
