@@ -38,7 +38,7 @@ threading.Thread(target=imports).start()
 
 
 def password_entry():
-    speak('security checks please , please enter your password sir')
+    speak('Running program security checks')
     from Security import Password_Entry
     Password_Entry.password()
 
@@ -47,7 +47,7 @@ password_entry()  # This program wont go furthermore until the reccursion happen
 
 # Preparing the main window
 
-speak('Welcome sir , nice to see you again')
+speak('Access granted , welcome sir , nice to see you again')
 
 print('Preparing main window...')
 main_window = Tk()
