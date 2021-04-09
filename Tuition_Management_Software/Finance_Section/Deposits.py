@@ -66,7 +66,7 @@ def record_deposits():
     
     # Making submit button
     
-    rec_depo_b1=ttk.Button(rec_depo, text='Submit', cursor='wait')
+    rec_depo_b1=ttk.Button(rec_depo, text='Submit')
     rec_depo_b1.grid(row=2,column=1,padx=5, pady=5)
     
     rec_depo.mainloop()
