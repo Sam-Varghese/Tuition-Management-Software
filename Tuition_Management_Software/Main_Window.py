@@ -38,6 +38,15 @@ def imports():
 
 threading.Thread(target=imports).start()
 
+
+def password_entry():
+
+    from Security import Password_Entry
+    Password_Entry.password()
+
+
+password_entry()  # This program wont go furthermore until the reccursion happening in Password_Entry.py doesnt stops and exit button has also been disabled
+
 # Preparing the main window
 
 print('Preparing main window...')
