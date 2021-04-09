@@ -26,10 +26,10 @@ def password():
     def dynamic_checking():
 
         print('Waiting...')
-        time.sleep(1)
+        time.sleep(1) # So as to avoid max recursion depth 
         print('Checking')
 
-        if entry.get() != 'abcdef':
+        if entry.get() != 'abcdef': # checking entry box's text after each sec
             dynamic_checking()
 
         else:

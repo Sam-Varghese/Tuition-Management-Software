@@ -45,7 +45,7 @@ def password_entry():
     Password_Entry.password()
 
 
-password_entry()  # This program wont go furthermore until the reccursion happening in Password_Entry.py doesnt stops and exit button has also been disabled
+password_entry()  # This program wont go furthermore until the recursion happening in Password_Entry.py doesnt stops and exit button has also been disabled
 
 # Preparing the main window
 
