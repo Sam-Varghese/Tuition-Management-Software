@@ -16,8 +16,8 @@ def password():
     pass_win = Tk()
     pass_win_gui = window(pass_win, 'Password')
 
-    entry = Entry(pass_win, bd=10, font=('georgia', 25))
-    entry.grid(row=1, column=0, columnspan=3)
+    entry = Entry(pass_win, bd=10, font=('georgia', 25), show='*')
+    entry.grid(row=1, column=0, columnspan=3, padx=5, pady=5)
 
     # code to disable exit button
     pass_win.protocol("WM_DELETE_WINDOW", disable_event)
