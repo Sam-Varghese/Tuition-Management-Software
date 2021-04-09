@@ -11,7 +11,8 @@ lock = threading.Lock()
 
 # Making a function to activate the speaking function of Speaker module and to put that in a separate thread as speak function is very slow
 
-def speak(text, lock=lock): # put thread locking as speak fuctions simultaneously executing produces errors
+
+def speak(text, lock=lock):  # put thread locking as speak fuctions simultaneously executing produces errors
 
     def process(text, lock):
         lock.acquire()
@@ -158,9 +159,11 @@ def lf4_b1_function():
 lf4_b1 = ttk.Button(lf4, text='Google', command=lf4_b1_function)
 lf4_b1.pack(padx=5, pady=5)
 
+
 def lf4_b2_function():
     speak('Opening YouTube sir')
     print('Running YouTube apps button sir')
+
 
 lf4_b2 = ttk.Button(lf4, text='Youtube', command=lf4_b2_function)
 lf4_b2.pack(padx=5, pady=5)
@@ -172,19 +175,29 @@ def lf4_b3_function():
 
     GeoGebra.geogebra()
 
+
 lf4_b3 = ttk.Button(lf4, text='GeoGebra',
-                    command=lf4_b3_function) # Mainly used for scientific maths , my father uses it , so I included also
+                    command=lf4_b3_function)  # Mainly used for scientific maths , my father uses it , so I included also
 lf4_b3.pack(padx=5, pady=5)
 
+
 def lf4_b4_function():
-    
+
     speak('Opening Spotify web player sir')
     print('Running spotify button program...')
 
-lf4_b4=ttk.Button(lf4, text='Spotify', command=lf4_b4_function) # Teachers should also listen to spotify :)
+
+# Teachers should also listen to spotify :)
+lf4_b4 = ttk.Button(lf4, text='Spotify', command=lf4_b4_function)
 lf4_b4.pack(padx=5, pady=5)
 
-main_win_b1=ttk.Button(main_window, text='Exit')
+
+def main_win_b1_func():
+
+    speak('Had aa great time with you sir , thanks for giving me a chance to serve you sir.')
+
+
+main_win_b1 = ttk.Button(main_window, text='Exit', command=main_win_b1_func)
 main_win_b1.grid(row=3, column=1)
 
 # Putting window in mainloop
