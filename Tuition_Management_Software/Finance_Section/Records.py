@@ -45,10 +45,12 @@ def deposit_records():
     depo_rec_l1_gui = window.label(
         depo_rec_l1, 'Please select whose records you want to access: ', 0, 0)
 
-    options = ['Class 12th', 'Class 11th', 'Sam', 'Angel', 'Rahul']
+    options = ['Class 12th', 'Class 11th', 'Sam', 'Angel', 'Rahul'] # Contains list of all names and classes
 
     depo_rec_combobox1 = ttk.Combobox(depo_rec_lf1)
     depo_rec_combobox1_gui = window.combobox(depo_rec_combobox1, options, 0, 1)
+    
+    # Program for submit button
 
     depo_rec_b1 = ttk.Button(depo_rec, text='Submit')
     depo_rec_b1.grid(row=1, column=3, padx=5, pady=5)
