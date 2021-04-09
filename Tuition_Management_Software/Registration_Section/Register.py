@@ -28,7 +28,7 @@ def imports():
     print('Pywhatkit imported')
 
 
-threading.Thread(target=imports).start()
+threading.Thread(target=imports).start() # For faster program
 
 
 def register_names():
