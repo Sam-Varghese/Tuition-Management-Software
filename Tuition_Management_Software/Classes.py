@@ -3,6 +3,7 @@
 # Importing necessary libraries
 from datetime import date
 from tkinter import *
+from tkinter import ttk
 
 
 def present_time_stamp():
@@ -36,6 +37,7 @@ class window():
     def entry(entry_name, row_no, column_no):
 
         entry_name['bg'] = 'snow'
+        entry_name['bd']=2
         entry_name['fg'] = 'black'
         entry_name['font'] = ('helvetica', 15)
         entry_name.grid(row=row_no, column=column_no,
@@ -46,6 +48,7 @@ class window():
         box_name['values'] = options
         box_name['state'] = 'readonly'
         box_name['font'] = ('georgia', 15)
+        ttk.Style().configure(box_name, relief='flat')
         box_name.grid(row=row_no, column=column_no, padx=5, pady=5, sticky='E')
 
     def dateentry(dateentry_name, row_no, column_no):
