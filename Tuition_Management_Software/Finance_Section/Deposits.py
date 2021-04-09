@@ -29,9 +29,9 @@ threading.Thread(target=imports).start()
 
 def record_deposits():
 
-    # Preparing deposits record acceptor window
+    # Preparing window to accept deposits
 
-    print('Preparing deposits record acceptor window...')
+    print('Preparing window to accept deposits...')
     rec_depo = Tk()
     rec_depo_gui = window(rec_depo, 'Deposits')
 
