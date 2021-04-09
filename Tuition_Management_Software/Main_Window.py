@@ -2,10 +2,11 @@
 
 # Importing necessary libraries.
 # Classes is a file with a separate class for all important widgets
-from Classes import window
-from tkinter import ttk
-from tkinter import *
+print('\nActivating program...\n')
 import threading
+from tkinter import *
+from tkinter import ttk
+from Classes import window
 
 lock = threading.Lock()
 
@@ -91,6 +92,7 @@ lf1_b2.pack(padx=5, pady=5)
 
 # Program for registration analysis button
 
+
 def lf1_b3_function():
     speak('Running registration analysis program sir')
     print('Running registration analysis button program...')
@@ -128,6 +130,7 @@ lf3 = LabelFrame(main_window, text='Finance Section')
 lf3.grid(row=1, column=2, padx=10, pady=10)
 
 # Program for deposit section
+
 
 def lf3_b1_function():
     speak('Running fee deposit program sir')
@@ -179,6 +182,7 @@ lf4_b1.pack(padx=5, pady=5)
 
 # Program for YouTube button
 
+
 def lf4_b2_function():
     speak('Opening YouTube sir')
     print('Running YouTube apps button sir')
@@ -220,7 +224,7 @@ lf4_b4.pack(padx=5, pady=5)
 def main_win_b1_func():
 
     speak('Had a great time with you sir , thanks for giving me a chance to serve you sir.')
-
+    print('\nTerminating the program...\n')
 
 main_win_b1 = ttk.Button(main_window, text='Exit', command=main_win_b1_func)
 main_win_b1.grid(row=3, column=1, padx=5, pady=5)
