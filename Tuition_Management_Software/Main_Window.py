@@ -22,7 +22,6 @@ def imports():
     from Finance_Section import Deposits
     from Extra_Softwares import Google
     from Extra_Softwares import GeoGebra
-    import time
     print('Button programs imported...')
 
 

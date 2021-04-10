@@ -6,7 +6,19 @@ print('Importing necessary libraries for register button...')
 from tkinter import *
 from tkinter import ttk
 from Classes import *
+import win32api
+import pyttsx3
 
+lock = threading.Lock()
+
+
+def speak(text, lock=lock):
+    def process(text, lock):
+        lock.acquire()
+        pyttsx3.speak(text)
+        lock.release()
+
+    threading.Thread(target=process, args=(text, lock)).start()
 
 def imports():
     global Calendar, DateEntry, datetime, pd, plt, string, os, pywhatkit
@@ -129,8 +141,12 @@ def register_names():
     cal_gui=window.dateentry(cal, 9, 1)
     
     # Making buttons for submitting data.
+    
+    def reg_b1_gui():
+        
+        speak('Submitting the registration data of '+reg_e1.get()+' sir')
 
-    reg_b1 = ttk.Button(register_names_window, text='Submit')
+    reg_b1 = ttk.Button(register_names_window, text='Submit', command=reg_b1_gui)
     reg_b1.grid(row=2, column=1, padx=5, pady=5)
     
     register_names_window.mainloop()
