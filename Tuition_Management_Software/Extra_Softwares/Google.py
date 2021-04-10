@@ -3,12 +3,19 @@
 # Importing necessary libraries
 print('Importing necessary libraries for google button...')
 import threading
-import time
 from Classes import *
-import webbrowser
 from tkinter import ttk
 from tkinter import *
 lock = threading.Lock()
+
+def imports():
+    global win32api, pyttsx3, webbrowser, time
+    import win32api
+    import pyttsx3
+    import webbrowser
+    import time
+    
+threading.Thread(target=imports).start()
 
 
 def speak(text, lock=lock): 
@@ -16,9 +23,8 @@ def speak(text, lock=lock):
     time.sleep(2) # put thread locking as speak fuctions simultaneously executing produces errors
     print('Sleep over sir , now feeling fresh')
     def process(text, lock):
-        from Speaker import speaking
         lock.acquire()
-        speaking(text)
+        pyttsx3.speak(text)
         lock.release()
 
     threading.Thread(target=process, args=(text, lock)).start()

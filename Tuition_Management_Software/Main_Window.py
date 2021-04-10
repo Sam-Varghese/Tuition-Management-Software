@@ -1,32 +1,23 @@
 # This file would contain program for the main window of this tuition management software.
 
 # Importing necessary libraries.
-# Classes is a file with a separate class for all important widgets
-from Speaker import speaking
+
 print('\nActivating program...\n')
 import threading
 from tkinter import *
 from tkinter import ttk
 from Classes import window
+import pyttsx3
+print('\nActivating program...\n')
+
 lock = threading.Lock()
-
-# Making a function to activate the speaking function of Speaker module and to put that in a separate thread as speak function is very slow
-
-
-def speak(text, lock=lock):  # put thread locking as speak fuctions simultaneously executing produces errors
-
-    def process(text, lock):
-        lock.acquire()       
-        speaking(text)
-        lock.release()
-
-    threading.Thread(target=process, args=(text, lock)).start()
 
 
 def imports():
 
     print('Importing necessary libraries for main window...')
-    global Records, Analysis, Deposits, Records, Google, GeoGebra,time
+    global win32api, Records, Analysis, Deposits, Records, Google, GeoGebra, time
+    import win32api
     print('Importing other buttons program...')
     from Registration_Section import Records
     from Registration_Section import Analysis
@@ -38,6 +29,18 @@ def imports():
 
 
 threading.Thread(target=imports).start()
+
+# Making a function to activate the speaking function of Speaker module and to put that in a separate thread as speak function is very slow
+
+
+def speak(text, lock=lock):  # put thread locking as speak fuctions simultaneously executing produces errors
+
+    def process(text, lock):
+        lock.acquire()
+        pyttsx3.speak(text)
+        lock.release()
+
+    threading.Thread(target=process, args=(text, lock)).start()
 
 
 def password_entry():
@@ -224,6 +227,7 @@ def main_win_b1_func():
 
     speak('Had a great time with you sir , thanks for giving me a chance to serve you sir.')
     print('\nTerminating the program...\n')
+
 
 main_win_b1 = ttk.Button(main_window, text='Exit', command=main_win_b1_func)
 main_win_b1.grid(row=3, column=1, padx=5, pady=5)
