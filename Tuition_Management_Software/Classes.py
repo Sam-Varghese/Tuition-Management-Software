@@ -18,6 +18,7 @@ class window():
     def __init__(self, window_name, title):
 
         window_name['background'] = 'blue'
+        window_name.geometry('+400+50')
         window_name.title(title)
         window_title = Label(window_name, text=title,
                              fg='white', bg='blue', font=('georgia', 25))
