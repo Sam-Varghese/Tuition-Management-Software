@@ -12,7 +12,7 @@ print('Importing necessary libraries for records button...')
 lock = threading.Lock()
 
 def speak(text, lock=lock):
-    def process(text, lock):# In future as no time.sleep has been put therefore if something is being spoken , then a runtime error can take place
+    def process(text, lock):# In case any user operates program very fast and clicks records submit button , then an error can take place as no time.sleep has been put therefore if something is being spoken , then a runtime error can take place
         
         lock.acquire()
         pyttsx3.speak(text)
