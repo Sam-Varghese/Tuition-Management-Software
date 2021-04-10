@@ -1,11 +1,29 @@
 # This folder contains program to access the records of fee depositors
 
 # Importing necessary libraries
+print('Importing necessary libraries for deposit records...')
+import time
+import pyttsx3
 import threading
 from Classes import *
 from tkinter import ttk
 from tkinter import *
-print('Importing necessary libraries for deposit records...')
+import win32api
+
+lock = threading.Lock()
+
+
+def speak(text, lock=lock):
+    def process(text, lock):  # In case any user operates program very fast and clicks records submit button , then an error can take place as no time.sleep has been put therefore if something is being spoken , then a runtime error can take place
+        print('Sleeping for 2 sec...')
+        time.sleep(2)
+        print('Woken sir ,feeling fresh now')
+        lock.acquire()
+        pyttsx3.speak(text)
+        lock.release()
+
+    threading.Thread(target=process, args=(text, lock)).start()
+
 
 
 def imports():
@@ -51,8 +69,12 @@ def deposit_records():
     depo_rec_combobox1_gui = window.combobox(depo_rec_combobox1, options, 0, 1)
     
     # Program for submit button
+    
+    def depo_rec_b1_func():
+        
+        speak('Showing specified records sir')
 
-    depo_rec_b1 = ttk.Button(depo_rec, text='Submit')
+    depo_rec_b1 = ttk.Button(depo_rec, text='Submit', command=depo_rec_b1_func)
     depo_rec_b1.grid(row=1, column=3, padx=5, pady=5)
 
     depo_rec.mainloop()
