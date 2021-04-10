@@ -2,12 +2,12 @@
 
 # Importing necessary libraries.
 # Classes is a file with a separate class for all important widgets
+from Speaker import speaking
 print('\nActivating program...\n')
 import threading
 from tkinter import *
 from tkinter import ttk
 from Classes import window
-
 lock = threading.Lock()
 
 # Making a function to activate the speaking function of Speaker module and to put that in a separate thread as speak function is very slow
@@ -16,8 +16,7 @@ lock = threading.Lock()
 def speak(text, lock=lock):  # put thread locking as speak fuctions simultaneously executing produces errors
 
     def process(text, lock):
-        lock.acquire()
-        from Speaker import speaking
+        lock.acquire()       
         speaking(text)
         lock.release()
 
@@ -27,13 +26,14 @@ def speak(text, lock=lock):  # put thread locking as speak fuctions simultaneous
 def imports():
 
     print('Importing necessary libraries for main window...')
-    global Records, Analysis, Deposits, Records, Google, GeoGebra
+    global Records, Analysis, Deposits, Records, Google, GeoGebra,time
     print('Importing other buttons program...')
     from Registration_Section import Records
     from Registration_Section import Analysis
     from Finance_Section import Deposits
     from Extra_Softwares import Google
     from Extra_Softwares import GeoGebra
+    import time
     print('Button programs imported...')
 
 
@@ -173,7 +173,6 @@ lf4.grid(row=2, column=1, padx=10, pady=10)
 def lf4_b1_function():
     speak('Running google apps button sir')
     print('Running google apps button...')
-
     Google.google_window()
 
 
