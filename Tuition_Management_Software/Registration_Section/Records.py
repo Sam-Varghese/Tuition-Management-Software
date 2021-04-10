@@ -1,19 +1,22 @@
 # Python file containing program to access records of students who registered names.
 
 # Importing necessary libraries...
+print('Importing necessary libraries for records button...')
 from tkinter import ttk
 from tkinter import *
 from Classes import *
 import pyttsx3
 import win32api
 import threading
-print('Importing necessary libraries for records button...')
+import time
 
 lock = threading.Lock()
 
 def speak(text, lock=lock):
-    def process(text, lock):# In case any user operates program very fast and clicks records submit button , then an error can take place as no time.sleep has been put therefore if something is being spoken , then a runtime error can take place
-        
+    def process(text, lock):
+        print('Sleeping for 1 sec...')
+        time.sleep(1)
+        print('Woken sir ,feeling fresh')
         lock.acquire()
         pyttsx3.speak(text)
         lock.release()
