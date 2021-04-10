@@ -8,10 +8,8 @@ from tkinter import *
 from tkinter import ttk
 from Classes import window
 import pyttsx3
-print('\nActivating program...\n')
 
 lock = threading.Lock()
-
 
 def imports():
 
