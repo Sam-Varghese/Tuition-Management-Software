@@ -232,6 +232,16 @@ def main_win_b1_func():
 main_win_b1 = ttk.Button(main_window, text='Exit', command=main_win_b1_func)
 main_win_b1.grid(row=3, column=1, padx=5, pady=5)
 
+# Program for shut down button
+
+def main_win_b2_func():
+    
+    speak('Had a great time with you sir , thanks for giving me a chance to serve you sir. Shutting laptop within 5 seconds')
+    print('\nShutting pc down...\n')
+
+main_win_b2 = ttk.Button(main_window, text='Shut Down',command=main_win_b2_func)
+main_win_b2.grid(row=4, column=1, padx=5, pady=5)
+
 # Putting window in mainloop
 
 main_window.mainloop()
