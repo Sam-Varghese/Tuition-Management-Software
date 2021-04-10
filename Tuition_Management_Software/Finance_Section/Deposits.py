@@ -6,6 +6,24 @@ print('Importing necessary libraries for storing deposits...')
 from Classes import *
 from tkinter import ttk
 from tkinter import *
+import win32api
+import pyttsx3
+import time
+
+lock = threading.Lock()
+
+
+def speak(text, lock=lock):
+    def process(text, lock):  # In case any user operates program very fast and clicks records submit button , then an error can take place as no time.sleep has been put therefore if something is being spoken , then a runtime error can take place
+        print('Sleeping for 1 sec...')
+        time.sleep(1)
+        print('Woken sir ,feeling fresh now')
+        lock.acquire()
+        pyttsx3.speak(text)
+        lock.release()
+
+    threading.Thread(target=process, args=(text, lock)).start()
+
 
 def imports():
     global Calendar, DateEntry, datetime, pd, plt, string, os, pywhatkit
@@ -66,7 +84,11 @@ def record_deposits():
     
     # Making submit button
     
-    rec_depo_b1=ttk.Button(rec_depo, text='Submit')
+    def rec_depo_b1_func():
+        
+        speak('Data of the depositor stored successfully sir')
+    
+    rec_depo_b1=ttk.Button(rec_depo, text='Submit', command=rec_depo_b1_func)
     rec_depo_b1.grid(row=2,column=1,padx=5, pady=5)
     
     rec_depo.mainloop()
