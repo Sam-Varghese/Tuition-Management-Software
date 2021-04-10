@@ -4,7 +4,21 @@
 from tkinter import ttk
 from tkinter import *
 from Classes import *
+import pyttsx3
+import win32api
+import threading
 print('Importing necessary libraries for records button...')
+
+lock = threading.Lock()
+
+def speak(text, lock=lock):
+    def process(text, lock):# In future as no time.sleep has been put therefore if something is being spoken , then a runtime error can take place
+        
+        lock.acquire()
+        pyttsx3.speak(text)
+        lock.release()
+
+    threading.Thread(target=process, args=(text, lock)).start()
 
 
 def access_records():
@@ -30,8 +44,12 @@ def access_records():
 
     reg_rec_combobox1 = ttk.Combobox(reg_rec_lf1)
     reg_rec_combobox1_gui = window.combobox(reg_rec_combobox1, options, 0, 1)
+    
+    def reg_rec_b1_function():
+        
+        speak('Analysing data for the selected option')
 
-    reg_rec_b1 = ttk.Button(reg_rec_lf1, text='Submit', cursor='wait')
+    reg_rec_b1 = ttk.Button(reg_rec_lf1, text='Submit', command=reg_rec_b1_function)
     reg_rec_b1.grid(row=0, column=2)
 
     registration_records_window.mainloop()

@@ -24,7 +24,6 @@ def imports():
     from Extra_Softwares import GeoGebra
     print('Button programs imported...')
 
-
 threading.Thread(target=imports).start()
 
 # Making a function to activate the speaking function of Speaker module and to put that in a separate thread as speak function is very slow
