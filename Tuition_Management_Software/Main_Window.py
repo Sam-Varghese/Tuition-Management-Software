@@ -50,7 +50,7 @@ password_entry()  # This program wont go furthermore until the recursion happeni
 
 # Preparing the main window
 
-speak('Access granted , welcome sir , nice to see you again')
+speak('Welcome sir , nice to see you again')
 
 print('Preparing main window...')
 main_window = Tk()
