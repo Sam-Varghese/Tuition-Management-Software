@@ -110,8 +110,9 @@ def register_names():
     reg_l7_gui = window.label(reg_l7, 'Fee deposit pattern: ', 6, 0)
 
     options = ['Yearly', 'Monthly']    
+    reg_combobox1_variable=StringVar()
 
-    reg_combobox1 = ttk.Combobox(reg_lf1)
+    reg_combobox1 = ttk.Combobox(reg_lf1, textvariable=reg_combobox1_variable)
     reg_combobox1_gui = window.combobox(reg_combobox1, options, 6, 1)
 
     # Preparing labels and comboboxes for gender details
@@ -120,8 +121,9 @@ def register_names():
     reg_l8_gui=window.label(reg_l8, 'Gender of student: ', 7, 0)
     
     options=['Male','Female']
+    reg_combobox2_variable=StringVar()
     
-    reg_combobox2=ttk.Combobox(reg_lf1)
+    reg_combobox2=ttk.Combobox(reg_lf1, textvariable=reg_combobox2_variable)
     reg_combobox2_gui=window.combobox(reg_combobox2, options, 7, 1)
     
     # Preparing labels and entry boxes for fees to be deposited
@@ -144,7 +146,9 @@ def register_names():
     
     def reg_b1_gui():
         
+        from Registration_Section import Register_func
         speak('Submitting the registration data of '+reg_e1.get()+' sir')
+        Register_func.reg_func(stu_name=reg_e1.get(), stu_class=reg_e2.get(), stu_school=reg_e3.get(), stu_mail=reg_e4.get(), stu_cont_no=reg_e5.get(), remarks=reg_e6.get(), fee_depo_pattern=reg_combobox1.get(), stu_gender=reg_combobox2.get(), tot_fee=reg_e7.get(), admini_date=cal.get())
 
     reg_b1 = ttk.Button(register_names_window, text='Submit', command=reg_b1_gui)
     reg_b1.grid(row=2, column=1, padx=5, pady=5)
