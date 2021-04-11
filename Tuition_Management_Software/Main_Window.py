@@ -5,6 +5,7 @@
 print('\nActivating program...\n')
 import pyttsx3
 from Classes import window
+from Prog_Calendar import time_stamp
 from tkinter import ttk
 from tkinter import *
 import threading
@@ -71,7 +72,7 @@ def main_win_time():
     
 threading.Thread(target=main_win_time).start()
 
-f5_b1=ttk.Button(f5, text='Calendar')
+f5_b1=ttk.Button(f5, text='Calendar', command=time_stamp)
 f5_b1.grid(row=1, column=1, padx=5, pady=5)
 
 
