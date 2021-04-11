@@ -85,6 +85,7 @@ def register_names():
     reg_l4_gui = window.label(reg_l4, 'E-Mail ID of student: ', 3, 0)
 
     reg_e4 = Entry(reg_lf1)
+    reg_e4.insert(0,'@gmail.com')
     reg_e4_gui = window.entry(reg_e4, 3, 1)
 
     # Preparing labels and entry boxes for contact number---
@@ -102,6 +103,7 @@ def register_names():
     reg_l6_gui = window.label(reg_l6, 'Remarks about student: ', 5, 0)
 
     reg_e6 = Entry(reg_lf1)
+    reg_e6.insert(0, 'None')
     reg_e6_gui = window.entry(reg_e6, 5, 1)
     
     # Preparing labels and comboboxes for remarks about pattern of fee deposits---
