@@ -19,6 +19,13 @@ def password():
     entry = Entry(pass_win, bd=10, font=('georgia', 25), show='*')
     entry.grid(row=1, column=0, columnspan=3, padx=5, pady=5)
     entry.focus_set()
+    
+    def legal_exit():
+        import os
+        os._exit(0)
+        
+    b1=ttk.Button(pass_win, text='Exit', command=legal_exit)
+    b1.grid(row=2,column=1, padx=5, pady=5)
 
     # code to disable exit button
     pass_win.protocol("WM_DELETE_WINDOW", disable_event)
