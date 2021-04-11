@@ -8,6 +8,7 @@ from Classes import window
 from tkinter import ttk
 from tkinter import *
 import threading
+import datetime
 
 lock = threading.Lock()
 
@@ -17,6 +18,7 @@ def imports():
     print('Importing necessary libraries for main window...')
     global win32api, Records, Analysis, Deposits, Records, Google, GeoGebra, time
     import win32api
+    import time
     print('Importing other buttons program...')
     from Registration_Section import Records
     from Registration_Section import Analysis
@@ -57,12 +59,25 @@ print('Preparing main window...')
 main_window = Tk()
 main_window_gui = window(main_window, 'Paul Classes')
 
+
+f5 = Frame(main_window)
+f5.grid(row=1, column=1, padx=5, pady=5)
+
+def main_win_time():
+    while True:
+        time.sleep(1)
+        f5_l1=Label(f5, text=datetime.datetime.now().strftime('%A %B %d %I:%M:%S %p'), font=('Helvetica', 15), fg='white', bg='blue')
+        f5_l1.grid(row=0, column=0, padx=5, pady=5)
+    
+threading.Thread(target=main_win_time).start()
+
+
 # Making label frames for putting buttons
 
 # LabelFrame lf1 for registration section
 
 lf1 = LabelFrame(main_window, text='Registration Section')
-lf1.grid(row=1, column=0, padx=10, pady=10)
+lf1.grid(row=2, column=0, padx=10, pady=10)
 
 # Program for registration button
 
@@ -108,7 +123,7 @@ lf1_b3.pack(padx=5, pady=5)
 # LabelFrame lf2 for attendance section
 
 lf2 = LabelFrame(main_window, text='Attendance Section')
-lf2.grid(row=1, column=1, padx=10, pady=10)
+lf2.grid(row=2, column=1, padx=10, pady=10)
 
 # Program for attendance button
 
@@ -128,7 +143,7 @@ lf2_b3.pack(padx=5, pady=5)
 # LabelFrame lf3 for finance section
 
 lf3 = LabelFrame(main_window, text='Finance Section')
-lf3.grid(row=1, column=2, padx=10, pady=10)
+lf3.grid(row=2, column=2, padx=10, pady=10)
 
 # Program for deposit section
 
@@ -166,7 +181,7 @@ lf3_b3.pack(padx=5, pady=5)
 # LabelFrame lf4 for other extra softwares
 
 lf4 = LabelFrame(main_window, text='Extra Softwares')
-lf4.grid(row=2, column=1, padx=10, pady=10)
+lf4.grid(row=3, column=1, padx=10, pady=10)
 
 # Program for Google
 
@@ -228,7 +243,7 @@ def main_win_b1_func():
 
 
 main_win_b1 = ttk.Button(main_window, text='Exit', command=main_win_b1_func)
-main_win_b1.grid(row=3, column=1, padx=5, pady=5)
+main_win_b1.grid(row=4, column=1, padx=5, pady=5)
 
 # Program for shut down button
 
@@ -241,7 +256,8 @@ def main_win_b2_func():
 
 main_win_b2 = ttk.Button(main_window, text='Shut Down',
                          command=main_win_b2_func)
-main_win_b2.grid(row=4, column=1, padx=5, pady=5)
+main_win_b2.grid(row=5, column=1, padx=5, pady=5)
+
 
 # Putting window in mainloop
 
