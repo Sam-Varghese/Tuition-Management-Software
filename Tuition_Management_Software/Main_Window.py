@@ -72,7 +72,11 @@ def main_win_time():
     
 threading.Thread(target=main_win_time).start()
 
-f5_b1=ttk.Button(f5, text='Calendar', command=time_stamp)
+def f5_b1_func():
+    speak('Opening calendar sir')
+    time_stamp()
+
+f5_b1=ttk.Button(f5, text='Calendar', command=f5_b1_func)
 f5_b1.grid(row=1, column=1, padx=5, pady=5)
 
 
