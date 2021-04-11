@@ -67,7 +67,7 @@ f5.grid(row=1, column=1, padx=5, pady=5)
 def main_win_time():
     while True:
         time.sleep(1)
-        f5_l1=Label(f5, text=datetime.datetime.now().strftime('%A %B %d %I:%M:%S %p'), font=('Helvetica', 15), fg='white', bg='blue')
+        f5_l1=Label(f5, text=datetime.datetime.now().strftime('%B %d %A %I:%M:%S %p'), font=('Helvetica', 15), fg='white', bg='blue')
         f5_l1.grid(row=0, column=0, padx=5, pady=5, columnspan=3)
     
 threading.Thread(target=main_win_time).start()

@@ -20,9 +20,11 @@ class window():
         window_name['background'] = 'blue'
         window_name.geometry('+400+50')
         window_name.title(title)
-        window_title = Label(window_name, text=title,
-                             fg='white', bg='blue', font=('georgia', 25))
-        window_title.grid(row=0, column=1)
+        f=Frame(window_name, bg='gold')
+        f.grid(row=0, column=0, sticky='ew', columnspan=3, pady=5)
+        window_title = Label(f, text=title,
+                             fg='blue', font=('georgia', 25), bg='yellow')
+        window_title.pack()
         # Restricting resizing of window to prevent change in format of contents.
         window_name.resizable(False, False)
 
