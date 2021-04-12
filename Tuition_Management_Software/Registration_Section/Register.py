@@ -8,6 +8,7 @@ from tkinter import ttk
 from tkinter import *
 import pandas as pd
 import time
+import os
 import threading
 print('Importing necessary libraries for register button...')
 
@@ -68,8 +69,11 @@ def register_names():
 
     def distinct_name_checker():
 
-
-        names = pd.read_excel('Students_Records.xlsx')['Name'].tolist()
+        if os.path.isfile('Students_Records.xlsx'):
+            names = pd.read_excel('Students_Records.xlsx')['Name'].tolist()
+        else:
+            print('No student records excel file detected')
+            return None
 
         while True:
 
@@ -204,7 +208,6 @@ def register_names():
     # Making buttons for submitting data.
 
     def reg_b1_gui():
-        register_names_window.destroy()
         from Registration_Section import Register_func
         Register_func.reg_func(stu_name=string.capwords(reg_e1.get()), stu_class=string.capwords(reg_e2.get()), stu_school=string.capwords(reg_e3.get()), stu_mail=reg_e4.get(), stu_cont_no=reg_e5.get(
         ), remarks=reg_e6.get().capitalize(), fee_depo_pattern=reg_combobox1.get(), stu_gender=reg_combobox2.get(), tot_fee=reg_e7.get(), admini_date=cal.get())
