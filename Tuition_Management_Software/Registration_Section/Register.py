@@ -1,6 +1,7 @@
 # Python File containing program to register names, and made for the register button of main window.
 
-# Importing necessary libraries
+# Importing necessary librariesthreading
+print('Importing necessary libraries for register button...')
 import pyttsx3
 import win32api
 from Classes import *
@@ -10,7 +11,6 @@ import pandas as pd
 import time
 import os
 import threading
-print('Importing necessary libraries for register button...')
 
 lock = threading.Lock()
 
@@ -70,34 +70,39 @@ def register_names():
     def distinct_name_checker():
 
         if os.path.isfile('Students_Records.xlsx'):
+            print('==Students records file found==')
             names = pd.read_excel('Students_Records.xlsx')['Name'].tolist()
+            print(names)
         else:
-            print('No student records excel file detected')
+            print('==No student records excel file detected==')
             return None
+        
+        def start_nam_check():
 
-        while True:
+            while True:
 
-            if reg_e1.get()=='':
-                time.sleep(2)
-                
-            else:
-                if string.capwords(reg_e1.get()) in names:
-                    print('Name repetetion detected')
-                    reg_e1['bg']='red'
-                    time.sleep(1)
-                    
+                if reg_e1.get() == '':
+                    time.sleep(2)
+
                 else:
-                    reg_e1['bg']='white'
-                    
-    threading.Thread(target=distinct_name_checker).start()
-                    
+                    if string.capwords(reg_e1.get()) in names:
+                        print('Name repetetion detected')
+                        reg_e1['bg'] = 'red'
+                        time.sleep(1)
+
+                    else:
+                        reg_e1['bg'] = 'white'
+
+        threading.Thread(target=start_nam_check).start()
+        
+    distinct_name_checker()
 
     # Preparing labels and entry boxes for class---
 
     reg_l2 = Label(reg_lf1)
-    
+
     # Class can be any other than 10, 11, 12 like 10th applied , therefore no combobox has been used with specific options.
-    
+
     reg_l2_gui = window.label(reg_l2, 'Class of student: ', 1, 0)
 
     reg_e2 = Entry(reg_lf1)
@@ -128,23 +133,23 @@ def register_names():
 
     reg_e5 = Entry(reg_lf1)
     reg_e5_gui = window.entry(reg_e5, 4, 1)
-    
+
     def valid_con_checker():
         print('Starting valid con checker')
         while True:
-            
+
             for i in reg_e5.get().split(','):
-                if i.isdigit()=='':
-                    reg_e5['bg']='white'
+                if i.isdigit() == '':
+                    reg_e5['bg'] = 'white'
                     time.sleep(2)
-                
-                if (i.isdigit()==False and i!='') or (i.isdigit() and len(i)!=10):
-                    reg_e5['bg']='red'
+
+                if (i.isdigit() == False and i != '') or (i.isdigit() and len(i) != 10):
+                    reg_e5['bg'] = 'red'
                     print('Invalid contact number detected')
                     time.sleep(1)
-                if i.isdigit() and len(i)==10:
-                    reg_e5['bg']='white'
-                
+                if i.isdigit() and len(i) == 10:
+                    reg_e5['bg'] = 'white'
+
     threading.Thread(target=valid_con_checker).start()
 
     # Preparing labels and entry boxes for remarks about student---
@@ -185,17 +190,17 @@ def register_names():
 
     reg_e7 = Entry(reg_lf1)
     reg_e7_gui = window.entry(reg_e7, 8, 1)
-    
+
     def fee_checker():
-        
+
         while True:
-            
-            if reg_e7.get().isdigit()==False and reg_e7.get()!='':
-                reg_e7['bg']='red'
+
+            if reg_e7.get().isdigit() == False and reg_e7.get() != '':
+                reg_e7['bg'] = 'red'
                 time.sleep(1)
             if reg_e7.get().isdigit():
-                reg_e7['bg']='white'
-                
+                reg_e7['bg'] = 'white'
+
     threading.Thread(target=fee_checker).start()
     # Preparing labels and calendar for remarks about date of admission---
 
