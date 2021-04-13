@@ -1,0 +1,13 @@
+name: Greetings
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: 'Thankyou for raising an issue and contributing to the devlopment of this project. We would do our best to resolve this issue as fast as possible and once this issue gets resolved, you would be informed about updates immediately.'
+        pr-message: 'Thankyou for working on this project and for spending your precious time on advancement of this software. Your pull request would be analysed as fast as possible and if your modifications really prove to be beneficial for this project, it would get automatically get merged else you would be receive suggestions, feedbacks from maintainers side.'
