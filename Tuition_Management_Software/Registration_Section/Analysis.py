@@ -6,11 +6,14 @@ from tkinter import *
 from tkinter import ttk
 import threading
 import win32api
+import matplotlib.pyplot as plt
 import pyttsx3
 import time
+import pandas as pd
 
 lock = threading.Lock()
 
+table=pd.read_excel('Students_Records.xlsx')
 
 def speak(text, lock=lock):
     def process(text, lock):  # In case any user operates program very fast and clicks records submit button , then an error can take place as no time.sleep has been put therefore if something is being spoken , then a runtime error can take place
@@ -54,7 +57,7 @@ def registration_analysis():
     reg_anal_win_gui = window(reg_anal_win, 'Registration Analysis')
 
     reg_anal_win_lf1 = LabelFrame(reg_anal_win, text='Analysis Section')
-    reg_anal_win_lf1.grid(row=1, column=1, columnspan=3, padx=10, pady=10)
+    reg_anal_win_lf1.grid(row=1, column=0, columnspan=3, padx=10, pady=10)
 
     # Asking for the type of analysis user wants
     
@@ -72,6 +75,21 @@ def registration_analysis():
     
     def reg_anal_b2_func():
         
+        unique_class=table.Class.unique()
+        stu_count=[]
+        for i in unique_class:
+            try:
+                i=int(i)
+            except Exception:
+                pass
+            stu_count.append(len(table[table['Class']==i].index))
+        plt.bar(unique_class, stu_count)
+        plt.xlabel('Classes')
+        plt.ylabel('Strength')
+        plt.title('Classwise Analysis')
+        plt.gcf().canvas.set_window_title('Class Analysis')
+        plt.show()
+        print(list(unique_class), stu_count)
         speak('Performing classwise analysis sir')
 
     reg_anal_b2 = ttk.Button(
@@ -82,6 +100,15 @@ def registration_analysis():
     
     def reg_anal_b3_func():
         
+        graph=plt.bar(['Males', 'Females'], [len(table[table['Gender'] == 'Male'].index), len(
+            table[table['Gender'] == 'Female'].index)])
+        plt.title('Gender Analysis')
+        plt.xlabel('Gender')
+        plt.ylabel('Students Count')
+        plt.gcf().canvas.set_window_title('Gender Analysis')
+        graph[0].set_color('red')
+        graph[1].set_color('pink')
+        plt.show()
         speak('Performing genderwise analysis sir')
 
     reg_anal_b3 = ttk.Button(

@@ -84,5 +84,8 @@ def access_records():
 
     reg_rec_b1 = ttk.Button(reg_rec_lf1, text='Submit', command=reg_rec_b1_function)
     reg_rec_b1.grid(row=0, column=2)
+    
+    reg_rec_b2=ttk.Button(registration_records_window, text='Exit', command=registration_records_window.destroy)
+    reg_rec_b2.grid(row=3, column=1, padx=5, pady=5)
 
     registration_records_window.mainloop()
