@@ -64,8 +64,21 @@ def registration_analysis():
     # Monthly analysis button program
     
     def reg_anal_b1_func():
-        
         speak('Performing Monthly Analysis sir')
+        table['Joining Date']=pd.to_datetime(table['Joining Date'])
+        final_table=table.groupby(table['Joining Date'].dt.strftime('%B %Y'))
+        dic={}
+        for i in final_table:
+            
+            dic[i[0]]=len(i[1].index)
+            
+        plt.barh(list(dic.keys()),list(dic.values()))
+        plt.ylabel('Months')
+        plt.xlabel('Students Count')
+        plt.title('Monthly Analysis')
+        plt.gcf().canvas.set_window_title('Monthly Analysis')
+        plt.show()
+        
 
     reg_anal_b1 = ttk.Button(
         reg_anal_win_lf1, text='Monthly Analysis', command=reg_anal_b1_func)
@@ -74,7 +87,7 @@ def registration_analysis():
     # Classwise analysis button program
     
     def reg_anal_b2_func():
-        
+        speak('Performing classwise analysis sir')
         unique_class=table.Class.unique()
         stu_count=[]
         for i in unique_class:
@@ -90,7 +103,7 @@ def registration_analysis():
         plt.gcf().canvas.set_window_title('Class Analysis')
         plt.show()
         print(list(unique_class), stu_count)
-        speak('Performing classwise analysis sir')
+        
 
     reg_anal_b2 = ttk.Button(
         reg_anal_win_lf1, text='Classwise Analysis', command=reg_anal_b2_func)
@@ -99,7 +112,7 @@ def registration_analysis():
     # Genderwise analysis button program
     
     def reg_anal_b3_func():
-        
+        speak('Performing genderwise analysis sir')
         graph=plt.bar(['Males', 'Females'], [len(table[table['Gender'] == 'Male'].index), len(
             table[table['Gender'] == 'Female'].index)])
         plt.title('Gender Analysis')
@@ -109,7 +122,7 @@ def registration_analysis():
         graph[0].set_color('red')
         graph[1].set_color('pink')
         plt.show()
-        speak('Performing genderwise analysis sir')
+        
 
     reg_anal_b3 = ttk.Button(
         reg_anal_win_lf1, text='Genderwise Analysis', command=reg_anal_b3_func)
