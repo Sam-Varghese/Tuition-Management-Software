@@ -45,7 +45,7 @@ def speak(text, lock=lock):  # put thread locking as speak fuctions simultaneous
 
 
 def password_entry():
-    speak('Running program security checks')
+    threading.Thread(target=speak,args=('Running program security checks',)).start()
     from Security_Section import Password_Entry
     Password_Entry.password()
 

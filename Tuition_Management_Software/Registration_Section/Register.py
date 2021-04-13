@@ -215,7 +215,7 @@ def register_names():
         from Registration_Section import Register_func
         Register_func.reg_func(string.capwords(reg_e1.get()), string.capwords(reg_e2.get()), string.capwords(reg_e3.get()), reg_e4.get(), reg_e5.get(), reg_e6.get().capitalize(), reg_combobox1.get(), reg_combobox2.get(), reg_e7.get(), cal.get())
         speak('Submitted the registration data of '+reg_e1.get()+' sir')
-
+        register_names_window.destroy()
 
     reg_b1 = ttk.Button(register_names_window,
                         text='Submit', command=reg_b1_gui)
