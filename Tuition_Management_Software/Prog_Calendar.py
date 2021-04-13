@@ -17,7 +17,7 @@ def time_stamp():
     f=Frame(cal_win)
     f.grid(row=1, column=1)
     
-    f_cal1=Calendar(f)
+    f_cal1=Calendar(f,background='blue', foreground='silver')
     f_cal1.grid(row=1, column=0, padx=5, pady=5)
     
     def cal_win_b1_func():

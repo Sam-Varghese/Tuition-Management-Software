@@ -79,7 +79,7 @@ def record_deposits():
     rec_depo_l3=Label(rec_depo_lf1)
     rec_depo_l3_gui=window.label(rec_depo_l3, 'Date of fee deposition: ', 2, 0)
     
-    cal=DateEntry(rec_depo_lf1)
+    cal=DateEntry(rec_depo_lf1, background='blue', foreground='silver')
     cal_gui=window.dateentry(cal, 2,1)
     
     # Making submit button

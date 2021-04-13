@@ -72,7 +72,6 @@ def register_names():
         if os.path.isfile('Students_Records.xlsx'):
             print('==Students records file found==')
             names = pd.read_excel('Students_Records.xlsx')['Name'].tolist()
-            print(names)
         else:
             print('==No student records excel file detected==')
             return None
@@ -207,16 +206,16 @@ def register_names():
     reg_l10 = Label(reg_lf1)
     reg_l10_gui = window.label(reg_l10, 'Date of admission: ', 9, 0)
 
-    cal = DateEntry(reg_lf1)
+    cal = DateEntry(reg_lf1, background='blue', foreground='silver')
     cal_gui = window.dateentry(cal, 9, 1)
 
     # Making buttons for submitting data.
 
     def reg_b1_gui():
         from Registration_Section import Register_func
-        Register_func.reg_func(stu_name=string.capwords(reg_e1.get()), stu_class=string.capwords(reg_e2.get()), stu_school=string.capwords(reg_e3.get()), stu_mail=reg_e4.get(), stu_cont_no=reg_e5.get(
-        ), remarks=reg_e6.get().capitalize(), fee_depo_pattern=reg_combobox1.get(), stu_gender=reg_combobox2.get(), tot_fee=reg_e7.get(), admini_date=cal.get())
+        Register_func.reg_func(string.capwords(reg_e1.get()), string.capwords(reg_e2.get()), string.capwords(reg_e3.get()), reg_e4.get(), reg_e5.get(), reg_e6.get().capitalize(), reg_combobox1.get(), reg_combobox2.get(), reg_e7.get(), cal.get())
         speak('Submitted the registration data of '+reg_e1.get()+' sir')
+
 
     reg_b1 = ttk.Button(register_names_window,
                         text='Submit', command=reg_b1_gui)
