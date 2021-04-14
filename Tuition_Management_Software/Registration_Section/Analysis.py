@@ -96,9 +96,9 @@ def registration_analysis():
             except Exception:
                 pass
             stu_count.append(len(table[table['Class']==i].index))
-        plt.bar(unique_class, stu_count)
-        plt.xlabel('Classes')
-        plt.ylabel('Strength')
+        plt.barh(unique_class, stu_count)
+        plt.ylabel('Classes')
+        plt.xlabel('Strength')
         plt.title('Classwise Analysis')
         plt.gcf().canvas.set_window_title('Class Analysis')
         plt.show()
