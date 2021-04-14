@@ -18,7 +18,7 @@ from Registration_Section import Analysis
 from Finance_Section import Deposits
 from Extra_Softwares import Google
 from Extra_Softwares import GeoGebra
-
+import pywhatkit
 lock = threading.Lock()
 
 
@@ -240,6 +240,7 @@ lf4_b4.pack(padx=5, pady=5)
 def main_win_b1_func():
 
     speak('Had a great time with you sir , thanks for giving me a chance to serve you sir.')
+    main_window.destroy()
     print('\nTerminating the program...\n')
 
 
@@ -252,6 +253,7 @@ main_win_b1.grid(row=4, column=1, padx=5, pady=5)
 def main_win_b2_func():
 
     speak('Had a great time with you sir , thanks for giving me a chance to serve you sir. Shutting laptop within 5 seconds')
+    pywhatkit.shutdown(time=5)
     print('\nShutting pc down...\n')
 
 
