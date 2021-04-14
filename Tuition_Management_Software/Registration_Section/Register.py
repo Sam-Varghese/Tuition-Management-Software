@@ -87,6 +87,8 @@ def register_names():
                     if string.capwords(reg_e1.get()) in names:
                         print('Name repetetion detected')
                         reg_e1['bg'] = 'red'
+                        speak('This names has been taken sir')
+                        print('Speaking')
                         time.sleep(1)
 
                     else:

@@ -18,7 +18,7 @@ class window():
     def __init__(self, window_name, title):
 
         #window_name['background'] = 'blue'
-        window_name.geometry('+400+50')
+        window_name.geometry('+400+0')
         window_name.title(title)
         f=Frame(window_name, bg='gold', relief='groove', bd=5)
         f.grid(row=0, column=0, sticky='ew', columnspan=3, pady=5)
