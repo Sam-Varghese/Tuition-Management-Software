@@ -29,7 +29,8 @@ def imports():
     print('Button programs imported...')
 
 
-threading.Thread(target=imports).start()
+#threading.Thread(target=imports).start()
+imports()
 
 # Making a function to activate the speaking function of Speaker module and to put that in a separate thread as speak function is very slow
 
@@ -45,8 +46,7 @@ def speak(text, lock=lock):  # put thread locking as speak fuctions simultaneous
 
 
 def password_entry():
-    threading.Thread(target=speak,args=('Running program security checks',)).start()
-    #speak('Running program security checks')
+    speak('Running program security checks')
     from Security_Section import Password_Entry
     Password_Entry.password()
 

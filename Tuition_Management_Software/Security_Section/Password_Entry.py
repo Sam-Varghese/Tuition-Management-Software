@@ -37,8 +37,6 @@ def password():
         print('Checking')
 
         if entry.get() != 'abcdef': # checking entry box's text after each sec
-            entry['bg']='red'
-            entry['fg']='white'
             dynamic_checking()
 
         else:
