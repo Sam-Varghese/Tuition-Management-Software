@@ -11,27 +11,15 @@ from tkinter import *
 import threading
 import datetime
 import webbrowser
+import win32api
+from Registration_Section import Records
+from Registration_Section import Analysis
+from Finance_Section import Deposits
+from Extra_Softwares import Google
+from Extra_Softwares import GeoGebra
 
 lock = threading.Lock()
 
-
-def imports():
-
-    print('Importing necessary libraries for main window...')
-    global win32api, Records, Analysis, Deposits, Records, Google, GeoGebra, time
-    import win32api
-    import time
-    print('Importing other buttons program...')
-    from Registration_Section import Records
-    from Registration_Section import Analysis
-    from Finance_Section import Deposits
-    from Extra_Softwares import Google
-    from Extra_Softwares import GeoGebra
-    print('Button programs imported...')
-
-
-#threading.Thread(target=imports).start()
-imports()
 
 # Making a function to activate the speaking function of Speaker module and to put that in a separate thread as speak function is very slow
 
