@@ -12,6 +12,7 @@ import threading
 import datetime
 import webbrowser
 import win32api
+import time
 from Registration_Section import Records
 from Registration_Section import Analysis
 from Finance_Section import Deposits
