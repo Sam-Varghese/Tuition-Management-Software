@@ -56,7 +56,8 @@ def registration_analysis():
     reg_anal_win = Tk()
     reg_anal_win_gui = window(reg_anal_win, 'Registration Analysis')
 
-    reg_anal_win_lf1 = LabelFrame(reg_anal_win, text='Analysis Section')
+    reg_anal_win_lf1 = LabelFrame(
+        reg_anal_win, text='Analysis Section', relief='groove', bd=10)
     reg_anal_win_lf1.grid(row=1, column=0, columnspan=3, padx=10, pady=10)
 
     # Asking for the type of analysis user wants

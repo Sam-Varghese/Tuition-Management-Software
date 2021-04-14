@@ -55,8 +55,8 @@ def register_names():
     register_names_window = Tk()
     register_names_window_gui = window(register_names_window, 'Registeration')
 
-    reg_lf1 = LabelFrame(register_names_window, text='Register')
-    reg_lf1.grid(row=1, column=0, columnspan=3)
+    reg_lf1 = LabelFrame(register_names_window, text='Register', relief='groove', bd=10)
+    reg_lf1.grid(row=1, column=0, columnspan=3, padx=10, pady=10)
 
     # Preparing labels and entry boxes for name---
 

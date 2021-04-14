@@ -35,7 +35,8 @@ def access_records():
     registration_records_window_gui = window(
         registration_records_window, 'Registration Records')
 
-    reg_rec_lf1 = LabelFrame(registration_records_window, text='Records')
+    reg_rec_lf1 = LabelFrame(registration_records_window,
+                             text='Records', relief='groove', bd=10)
     reg_rec_lf1.grid(row=1, column=0, columnspan=3, padx=10, pady=10)
 
     # Asking for the kind of data user wants to access
@@ -55,8 +56,8 @@ def access_records():
     reg_rec_combobox1 = ttk.Combobox(reg_rec_lf1, textvariable=variable)
     reg_rec_combobox1_gui = window.combobox(reg_rec_combobox1, options, 0, 1)
     
-    f1=Frame(registration_records_window)
-    f1.grid(row=2, column=0, columnspan=3, padx=5, pady=5)
+    f1=Frame(registration_records_window, relief='groove', bd=10)
+    f1.grid(row=2, column=0, columnspan=3, padx=10, pady=10)
     
     def reg_rec_b1_function():
         

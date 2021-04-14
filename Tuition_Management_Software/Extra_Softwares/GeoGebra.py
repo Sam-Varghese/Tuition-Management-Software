@@ -34,8 +34,8 @@ def geogebra():
     geo_win=Tk()
     geo_win_gui=window(geo_win, 'GeoGebra')
     
-    geo_win_lf1=LabelFrame(geo_win, text='GeoGebra Apps')
-    geo_win_lf1.grid(row=1, column=0, columnspan=3, padx=5, pady=5)
+    geo_win_lf1=LabelFrame(geo_win, text='GeoGebra Apps', relief='groove', bd=10)
+    geo_win_lf1.grid(row=1, column=0, columnspan=3, padx=10, pady=10)
     
     # Making button for Calculator Suite
     

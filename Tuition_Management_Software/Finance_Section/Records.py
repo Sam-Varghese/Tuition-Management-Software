@@ -57,8 +57,8 @@ def deposit_records():
     depo_rec = Tk()
     depo_rec_gui = window(depo_rec, 'Deposit Records')
 
-    depo_rec_lf1 = LabelFrame(depo_rec, text='Records')
-    depo_rec_lf1.grid(row=1, column=0, columnspan=2, padx=5, pady=5)
+    depo_rec_lf1 = LabelFrame(depo_rec, text='Records', relief='groove', bd=10)
+    depo_rec_lf1.grid(row=1, column=0, columnspan=2, padx=10, pady=10)
 
     # Making labels and boxes for type of record user wants to access
 
@@ -78,8 +78,8 @@ def deposit_records():
     
     def depo_rec_b1_func():
         
-        f1=Frame(depo_rec)
-        f1.grid(row=2, column=0, columnspan=3, padx=5, pady=5)
+        f1 = Frame(depo_rec, relief='groove', bd=10)
+        f1.grid(row=2, column=0, columnspan=3, padx=10, pady=10)
         
         if depo_rec_combobox1.get() in classes:
             

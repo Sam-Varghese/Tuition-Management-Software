@@ -37,8 +37,8 @@ def google_window():
     google_win = Tk()
     google_win_gui = window(google_win, 'Google')
 
-    google_win_lf1 = LabelFrame(google_win, text='Google Apps')
-    google_win_lf1.grid(row=1, column=0, columnspan=3, padx=5, pady=5)
+    google_win_lf1 = LabelFrame(google_win, text='Google Apps', relief='groove', bd=10)
+    google_win_lf1.grid(row=1, column=0, columnspan=3, padx=10, pady=10)
 
     # Google Chrome button
 

@@ -56,8 +56,8 @@ threading.Thread(target=imports).start()
 def record_deposits():
     rec_depo=Tk()
     rec_depo_gui=window(rec_depo, 'Fee Deposits')
-    rec_depo_lf1=LabelFrame(rec_depo, text='Deposits')
-    rec_depo_lf1.grid(row=1, column=0, columnspan=3)
+    rec_depo_lf1=LabelFrame(rec_depo, text='Deposits', relief='groove', bd=10)
+    rec_depo_lf1.grid(row=1, column=0, columnspan=3, padx=10, pady=10)
 
     # Preparing labels and combobox for name
     if os.path.isfile('Students_Records.xlsx'):

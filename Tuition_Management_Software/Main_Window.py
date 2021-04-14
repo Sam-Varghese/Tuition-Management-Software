@@ -10,6 +10,7 @@ from tkinter import ttk
 from tkinter import *
 import threading
 import datetime
+import webbrowser
 
 lock = threading.Lock()
 
@@ -62,13 +63,13 @@ main_window = Tk()
 main_window_gui = window(main_window, 'Paul Classes')
 
 
-f5 = Frame(main_window)
-f5.grid(row=1, column=1, padx=5, pady=5)
+f5 = Frame(main_window, bd=10, relief='groove')
+f5.grid(row=1, column=1, padx=10, pady=10)
 
 def main_win_time():
     while True:
         time.sleep(1)
-        f5_l1=Label(f5, text=datetime.datetime.now().strftime('%B %d %A %I:%M:%S %p'), font=('Helvetica', 15), fg='white', bg='blue')
+        f5_l1=Label(f5, text=datetime.datetime.now().strftime('%B %d %A %I:%M:%S %p'), font=('Helvetica', 15), fg='blue')
         f5_l1.grid(row=0, column=0, padx=5, pady=5, columnspan=3)
     
 threading.Thread(target=main_win_time).start()
@@ -85,7 +86,7 @@ f5_b1.grid(row=1, column=1, padx=5, pady=5)
 
 # LabelFrame lf1 for registration section
 
-lf1 = LabelFrame(main_window, text='Registration Section')
+lf1 = LabelFrame(main_window, text='Registration Department', relief='groove', bd=10)
 lf1.grid(row=2, column=0, padx=10, pady=10)
 
 # Program for registration button
@@ -131,7 +132,7 @@ lf1_b3.pack(padx=5, pady=5)
 
 # LabelFrame lf2 for attendance section
 
-lf2 = LabelFrame(main_window, text='Attendance Section')
+lf2 = LabelFrame(main_window, text='Attendance Department', relief='groove', bd=10)
 lf2.grid(row=2, column=1, padx=10, pady=10)
 
 # Program for attendance button
@@ -151,7 +152,7 @@ lf2_b3.pack(padx=5, pady=5)
 
 # LabelFrame lf3 for finance section
 
-lf3 = LabelFrame(main_window, text='Finance Section')
+lf3 = LabelFrame(main_window, text='Finance Department', relief='groove', bd=10)
 lf3.grid(row=2, column=2, padx=10, pady=10)
 
 # Program for deposit section
@@ -189,7 +190,7 @@ lf3_b3.pack(padx=5, pady=5)
 
 # LabelFrame lf4 for other extra softwares
 
-lf4 = LabelFrame(main_window, text='Extra Softwares')
+lf4 = LabelFrame(main_window, text='Important Softwares', relief='groove', bd=10)
 lf4.grid(row=3, column=1, padx=10, pady=10)
 
 # Program for Google
@@ -208,9 +209,10 @@ lf4_b1.pack(padx=5, pady=5)
 
 
 def lf4_b2_function():
+    
+    webbrowser.open('https://www.youtube.com/')
     speak('Opening YouTube sir')
     print('Running YouTube apps button sir')
-
 
 lf4_b2 = ttk.Button(lf4, text='Youtube', command=lf4_b2_function)
 lf4_b2.pack(padx=5, pady=5)
@@ -234,6 +236,7 @@ lf4_b3.pack(padx=5, pady=5)
 
 def lf4_b4_function():
 
+    webbrowser.open('https://open.spotify.com/')
     speak('Opening Spotify web player sir')
     print('Running spotify button program...')
 

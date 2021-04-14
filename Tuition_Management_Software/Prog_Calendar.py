@@ -14,8 +14,8 @@ def time_stamp():
     cal_win=Tk()
     cal_win_gui=window(cal_win, 'Calendar')
     
-    f=Frame(cal_win)
-    f.grid(row=1, column=1)
+    f = Frame(cal_win, relief='groove', bd=10)
+    f.grid(row=1, column=1, padx=10, pady=10)
     
     f_cal1=Calendar(f,background='blue', foreground='silver')
     f_cal1.grid(row=1, column=0, padx=5, pady=5)
