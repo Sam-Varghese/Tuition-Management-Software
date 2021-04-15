@@ -183,6 +183,9 @@ lf3_b2.pack(padx=5, pady=5)
 
 # Program for fee defaulters button
 
+def lf3_b3_func():
+    from Finance_Section import Defaulters
+
 lf3_b3 = ttk.Button(lf3, text='Defaulters')
 lf3_b3.pack(padx=5, pady=5)
 
