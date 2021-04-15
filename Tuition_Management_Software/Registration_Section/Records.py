@@ -1,17 +1,31 @@
 # Python file containing program to access records of students who registered names.
 
 # Importing necessary libraries...
-print('Importing necessary libraries for records button...')
 from tkinter import ttk
-from tkinter import *
 from Classes import *
-import pyttsx3
+from tkinter import *
 import win32api
-import threading
+import pyttsx3
 import pandas as pd
-from pandastable import Table
+import threading
 import time
+from pandastable import Table
+from oauth2client.service_account import ServiceAccountCredentials
+import gspread
+print('Importing necessary libraries for records button...')
+scope = ['https://spreadsheets.google.com/feeds',
+         'https://www.googleapis.com/auth/drive']
+credentials = ServiceAccountCredentials.from_json_keyfile_name(
+    'GSpread-2ecbd68261be.json', scope)
+gc = gspread.authorize(credentials)
+wks = gc.open('Students_Records').sheet1
 
+data = wks.get_all_values()
+headers = data.pop(0)
+
+table = pd.DataFrame(data, columns=headers)
+print('Table from records.py')
+print('Google data fetched')
 lock = threading.Lock()
 
 def speak(text, lock=lock):
@@ -45,8 +59,7 @@ def access_records():
     reg_rec_gui = window.label(
         reg_rec_l1, 'Please select whose data you want to access: ', 0, 0)
     
-    table = pd.read_excel('Students_Records.xlsx')
-    names=table['Name'].tolist()
+    names=table['Name'].to_list()
     classes = [str(i) for i in list(table.Class.unique())]
 
     options = ['All Classes']+classes+names  # Contains all names and classes
@@ -74,7 +87,8 @@ def access_records():
         if reg_rec_combobox1.get() in classes:
             
             try:
-                rec_class = int(reg_rec_combobox1.get())
+                #rec_class = int(reg_rec_combobox1.get())
+                rec_class = reg_rec_combobox1.get()
             except Exception:
                 rec_class = reg_rec_combobox1.get()
             

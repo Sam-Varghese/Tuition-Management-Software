@@ -1,24 +1,47 @@
 # This file contains program to store records of all fee depositors
 
 # Importing necessary libraries
-from tkcalendar import Calendar, DateEntry
-import os
+from tkinter import *
+import threading
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+from tkcalendar import  DateEntry
 import string
 import pandas as pd
-from datetime import datetime
 import time
 import pyttsx3
 import win32api
-from tkinter import *
+
 from tkinter import ttk
+
 from Classes import *
-import threading
-print('Importing necessary libraries for storing deposits...')
-print('Calendar, DateEntry imported')
-print('Datetime imported')
-print('Pandas imported')
-print('String imported')
-table = pd.read_excel('Students_Records.xlsx')
+
+
+scope = ['https://spreadsheets.google.com/feeds',
+         'https://www.googleapis.com/auth/drive']
+credentials = ServiceAccountCredentials.from_json_keyfile_name(
+    'GSpread-2ecbd68261be.json', scope)
+gc = gspread.authorize(credentials)
+wks = gc.open('Students_Records').sheet1
+
+data = wks.get_all_values()
+headers = data.pop(0)
+
+table = pd.DataFrame(data, columns=headers)
+
+wks = gc.open('Students_Records').worksheet('Sheet2')
+
+data = wks.get_all_values()
+headers = data.pop(0)
+
+wks = gc.open('Students_Records').worksheet('Sheet2')
+
+data = wks.get_all_values()
+headers = data.pop(0)
+
+sh = gc.open('Students_Records')
+
+worksheet = sh.get_worksheet(1)
 
 lock = threading.Lock()
 
@@ -32,27 +55,6 @@ def speak(text, lock=lock):
     threading.Thread(target=process, args=(text, lock)).start()
 
 
-def imports():
-    global Calendar, DateEntry, datetime, pd, plt, string, os, pywhatkit
-    from tkcalendar import Calendar, DateEntry
-    print('Calendar, DateEntry imported')
-    from datetime import datetime
-    print('Datetime imported')
-    import pandas as pd
-    print('Pandas imported')
-    import matplotlib.pyplot as plt
-    print('Matplotlib imported')
-    import string
-    print('String imported')
-    import os
-    print('OS imported')
-    import pywhatkit
-    print('Pywhatkit imported')
-
-
-threading.Thread(target=imports).start()
-
-
 def record_deposits():
     rec_depo=Tk()
     rec_depo_gui=window(rec_depo, 'Fee Deposits')
@@ -60,10 +62,8 @@ def record_deposits():
     rec_depo_lf1.grid(row=1, column=0, columnspan=3, padx=10, pady=10)
 
     # Preparing labels and combobox for name
-    if os.path.isfile('Students_Records.xlsx'):
-        options = table['Name'].to_list()
-    else:
-        options = []
+
+    options = table['Name'].to_list()
 
     rec_depo_l1 = Label(rec_depo_lf1)
     rec_depo_l1_gui = window.label(rec_depo_l1, 'Name of depositor: ', 0, 0)
@@ -115,7 +115,7 @@ def record_deposits():
 
     threading.Thread(target=fee_depo_checker).start()
 
-    # Preparing labels and calendar for date of this fee submittion
+    # Preparing labels and for date of this fee submittion
 
     rec_depo_l3 = Label(rec_depo_lf1)
     rec_depo_l3_gui = window.label(
@@ -135,24 +135,25 @@ def record_deposits():
 
     def rec_depo_b1_func():
 
+        
+
         record = pd.DataFrame({'Name': [rec_depo_combobox1.get()], 'Class': [
             table[table['Name'] == rec_depo_combobox1.get()]['Class'].iloc[0]], 'Fee Deposited': [rec_depo_e1.get()], 'Deposition Date': [cal.get()], 'School': [table[table['Name'] == rec_depo_combobox1.get()]['School'].iloc[0]], 'EMail ID': [table[table['Name'] == rec_depo_combobox1.get()]['EMail ID'].iloc[0]], 'Contact Number': [table[table['Name'] == rec_depo_combobox1.get()]['Contact Number'].iloc[0]], 'Remarks': [table[table['Name'] == rec_depo_combobox1.get()]['Remarks'].iloc[0]], 'Deposit Pattern': [table[table['Name'] == rec_depo_combobox1.get()]['Deposit Pattern'].iloc[0]], 'Gender': [table[table['Name'] == rec_depo_combobox1.get()]['Gender'].iloc[0]], 'Total Fee': [table[table['Name'] == rec_depo_combobox1.get()]['Total Fee'].iloc[0]], 'Joining Date': [table[table['Name'] == rec_depo_combobox1.get()]['Joining Date'].iloc[0]]}).set_index('Name')
+        new_table = pd.DataFrame(
+            data, columns=headers)
+        new_table.set_index('Name', inplace=True)
 
-        if os.path.isfile('Deposit_Records.xlsx') == False:
+        new_table = new_table.append(record)
 
-            record.to_excel('Deposit_Records.xlsx')
-            print('Records stored successfully')
+        new_table.sort_values(by=['Name'], inplace=True)
+        print('Table sorted alphabatically sir')
 
-        else:
-
-            new_table = pd.read_excel('Deposit_Records.xlsx').set_index('Name')
-            new_table = new_table.append(record)
-
-            new_table.sort_values(by=['Name'], inplace=True)
-            print('Table sorted alphabatically sir')
-
-            new_table.to_excel('Deposit_Records.xlsx')
-            print('All data saved successfully sir.')
+        
+        new_table.reset_index(inplace=True)
+        worksheet.update([new_table.columns.values.tolist()]+new_table.values.tolist())
+    
+        new_table.to_excel('Deposit_Records.xlsx')
+        print('All data saved successfully sir.')
 
         speak('Data of the depositor stored successfully sir')
         rec_depo.destroy()

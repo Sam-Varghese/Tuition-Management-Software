@@ -9,8 +9,23 @@ from tkinter import ttk
 from tkinter import *
 import pandas as pd
 import time
-import os
+import string
 import threading
+from tkcalendar import DateEntry
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+import pandas as pd
+scope = ['https://spreadsheets.google.com/feeds',
+         'https://www.googleapis.com/auth/drive']
+credentials = ServiceAccountCredentials.from_json_keyfile_name(
+    'GSpread-2ecbd68261be.json', scope)
+gc = gspread.authorize(credentials)
+wks = gc.open('Students_Records').sheet1
+
+data = wks.get_all_values()
+headers = data.pop(0)
+
+table = pd.DataFrame(data, columns=headers)
 
 lock = threading.Lock()
 
@@ -23,28 +38,6 @@ def speak(text, lock=lock):
 
     threading.Thread(target=process, args=(text, lock)).start()
 
-
-def imports():
-    global Calendar, DateEntry, datetime, pd, plt, string, os, pywhatkit
-    from tkcalendar import Calendar, DateEntry
-    print('Calendar, DateEntry imported')
-    from datetime import datetime
-    print('Datetime imported')
-    import pandas as pd
-    print('Pandas imported')
-    import matplotlib.pyplot as plt
-    print('Matplotlib imported')
-    import string
-    print('String imported')
-    import os
-    print('OS imported')
-    import time
-    print('Time imported')
-    import pywhatkit
-    print('Pywhatkit imported')
-
-
-threading.Thread(target=imports).start()  # For faster program
 
 
 def register_names():
@@ -69,12 +62,7 @@ def register_names():
 
     def distinct_name_checker():
 
-        if os.path.isfile('Students_Records.xlsx'):
-            print('==Students records file found==')
-            names = pd.read_excel('Students_Records.xlsx')['Name'].tolist()
-        else:
-            print('==No student records excel file detected==')
-            return None
+        names=table['Name'].to_list()
         
         def start_nam_check():
 

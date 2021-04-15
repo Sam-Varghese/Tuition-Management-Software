@@ -2,29 +2,13 @@
 
 # Importing necessary libraries.
 
-print('\nActivating program...\n')
-import pyttsx3
-from Classes import window
-from Prog_Calendar import time_stamp
-from tkinter import ttk
-from tkinter import *
+import time
 import threading
+import pyttsx3
+import win32api
 import datetime
 import webbrowser
-import win32api
-import time
-from Registration_Section import Records
-from Registration_Section import Analysis
-from Finance_Section import Deposits
-from Extra_Softwares import Google
-from Extra_Softwares import GeoGebra
-import pywhatkit
 lock = threading.Lock()
-
-
-# Making a function to activate the speaking function of Speaker module and to put that in a separate thread as speak function is very slow
-
-
 def speak(text, lock=lock):  # put thread locking as speak fuctions simultaneously executing produces errors
 
     def process(text, lock):
@@ -34,14 +18,37 @@ def speak(text, lock=lock):  # put thread locking as speak fuctions simultaneous
 
     threading.Thread(target=process, args=(text, lock)).start()
 
-
 def password_entry():
     speak('Running program security checks')
     from Security_Section import Password_Entry
     Password_Entry.password()
 
-
 password_entry()  # This program wont go furthermore until the recursion happening in Password_Entry.py doesnt stops and exit button has also been disabled
+
+
+print('\nActivating program...\n')
+
+
+from Classes import window
+
+from tkinter import ttk
+from tkinter import *
+
+
+
+
+
+
+
+
+
+# Making a function to activate the speaking function of Speaker module and to put that in a separate thread as speak function is very slow
+
+
+
+
+
+
 
 # Preparing the main window
 
@@ -65,6 +72,7 @@ threading.Thread(target=main_win_time).start()
 
 def f5_b1_func():
     speak('Opening calendar sir')
+    from Prog_Calendar import time_stamp
     time_stamp()
 
 f5_b1=ttk.Button(f5, text='Calendar', command=f5_b1_func)
@@ -98,6 +106,7 @@ lf1_b1.pack(padx=5, pady=5)
 def lf1_b2_function():
     speak('Running registration records program sir')
     print('Running registration records button program...')
+    from Registration_Section import Records
     Records.access_records()
 
 
@@ -111,7 +120,7 @@ lf1_b2.pack(padx=5, pady=5)
 def lf1_b3_function():
     speak('Running registration analysis program sir')
     print('Running registration analysis button program...')
-
+    from Registration_Section import Analysis
     Analysis.registration_analysis()
 
 
@@ -150,7 +159,7 @@ lf3.grid(row=2, column=2, padx=10, pady=10)
 def lf3_b1_function():
     speak('Running fee deposit program sir')
     print('Running fee deposit button...')
-    from Finance_Section import Records
+    from Finance_Section import Deposits
     Deposits.record_deposits()
 
 
@@ -188,6 +197,7 @@ lf4.grid(row=3, column=1, padx=10, pady=10)
 def lf4_b1_function():
     speak('Running google apps button sir')
     print('Running google apps button...')
+    from Extra_Softwares import Google
     Google.google_window()
 
 
@@ -212,7 +222,7 @@ lf4_b2.pack(padx=5, pady=5)
 def lf4_b3_function():
     speak('Running geogebra apps button sir')
     print('Running GeoGebra apps button...')
-
+    from Extra_Softwares import GeoGebra
     GeoGebra.geogebra()
 
 
