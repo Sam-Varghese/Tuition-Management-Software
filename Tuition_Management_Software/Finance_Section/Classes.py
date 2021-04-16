@@ -4,8 +4,8 @@
 from datetime import date
 from tkinter import *
 from tkinter import ttk
-import threading
 import time
+import threading
 
 def present_time_stamp():
 
@@ -53,22 +53,21 @@ class window():
         box_name['font'] = ('georgia', 15)
         ttk.Style().configure(box_name, relief='flat')
         box_name.grid(row=row_no, column=column_no, padx=5, pady=5, sticky='E')
-
         def dynamic_searchbox():
             while True:
                 print('Dynamic checking')
                 time.sleep(1)
-                box_text = box_name.get()
-                new_options = []
+                box_text=box_name.get()
+                new_options=[]
                 for i in options:
                     if box_text in i:
                         new_options.append(i)
+                if new_options == []:
+                    new_options = ['No similar name']
                 new_options.sort()
-                if new_options==[]:
-                    new_options=['No similar name']
-                box_name['values'] = new_options
+                box_name['values']=new_options
         threading.Thread(target=dynamic_searchbox).start()
-
+                
     def dateentry(dateentry_name, row_no, column_no):
 
         from datetime import datetime

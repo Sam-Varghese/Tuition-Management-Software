@@ -185,8 +185,8 @@ lf3_b2.pack(padx=5, pady=5)
 
 def lf3_b3_func():
     from Finance_Section import Defaulters
-
-lf3_b3 = ttk.Button(lf3, text='Defaulters')
+    Defaulters.defaulter()
+lf3_b3 = ttk.Button(lf3, text='Defaulters', command=lf3_b3_func)
 lf3_b3.pack(padx=5, pady=5)
 
 # LabelFrame lf4 for other extra softwares

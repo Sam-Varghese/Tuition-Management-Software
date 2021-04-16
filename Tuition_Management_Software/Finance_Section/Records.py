@@ -79,6 +79,7 @@ def deposit_records():
 
     classes=[str(i) for i in list(table.Class.unique())]
     names=list(table.Name.unique())
+    names.sort()
     options = ['All History']+classes+names # Contains list of all names and classes
 
     variable=StringVar()

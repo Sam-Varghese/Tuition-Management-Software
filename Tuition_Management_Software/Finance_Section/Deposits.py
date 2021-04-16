@@ -64,6 +64,7 @@ def record_deposits():
     # Preparing labels and combobox for name
 
     options = table['Name'].to_list()
+    options.sort()
 
     rec_depo_l1 = Label(rec_depo_lf1)
     rec_depo_l1_gui = window.label(rec_depo_l1, 'Name of depositor: ', 0, 0)

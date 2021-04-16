@@ -60,6 +60,7 @@ def access_records():
         reg_rec_l1, 'Please select whose data you want to access: ', 0, 0)
     
     names=table['Name'].to_list()
+    names.sort()
     classes = [str(i) for i in list(table.Class.unique())]
 
     options = ['All Classes']+classes+names  # Contains all names and classes
