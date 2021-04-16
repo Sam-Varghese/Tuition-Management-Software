@@ -9,8 +9,6 @@ from tkcalendar import  DateEntry
 import string
 import pandas as pd
 import time
-import pyttsx3
-import win32api
 
 from tkinter import ttk
 
@@ -42,17 +40,6 @@ headers = data.pop(0)
 sh = gc.open('Students_Records')
 
 worksheet = sh.get_worksheet(1)
-
-lock = threading.Lock()
-
-
-def speak(text, lock=lock):
-    
-    def process(text, lock):
-        lock.acquire()
-        pyttsx3.speak(text)
-        lock.release()
-    threading.Thread(target=process, args=(text, lock)).start()
 
 
 def record_deposits():
@@ -156,7 +143,7 @@ def record_deposits():
         new_table.to_excel('Deposit_Records.xlsx')
         print('All data saved successfully sir.')
 
-        speak('Data of the depositor stored successfully sir')
+        
         rec_depo.destroy()
 
     rec_depo_b1 = ttk.Button(rec_depo, text='Submit', command=rec_depo_b1_func)

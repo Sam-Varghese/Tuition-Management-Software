@@ -9,25 +9,11 @@ from tkinter import *
 lock = threading.Lock()
 
 def imports():
-    global win32api, pyttsx3, webbrowser, time
-    import win32api
-    import pyttsx3
+    global webbrowser, time
     import webbrowser
     import time
     
 threading.Thread(target=imports).start()
-
-
-def speak(text, lock=lock): 
-    print('2 Seconds sleep to avoid voice collission...')
-    time.sleep(2) # put thread locking as speak fuctions simultaneously executing produces errors
-    print('Sleep over sir , now feeling fresh')
-    def process(text, lock):
-        lock.acquire()
-        pyttsx3.speak(text)
-        lock.release()
-
-    threading.Thread(target=process, args=(text, lock)).start()
 
 
 def google_window():
@@ -44,7 +30,7 @@ def google_window():
 
     def google_win_b1_function():
         webbrowser.open('www.google.com')
-        speak('Opening google chrome sir')
+        
 
     google_win_b1 = ttk.Button(
         google_win_lf1, text='Google-Chrome', command=google_win_b1_function)
@@ -54,7 +40,7 @@ def google_window():
 
     def google_win_b2_function():
         webbrowser.open('https://meet.google.com/')
-        speak('Opening google meet sir')
+        
 
     google_win_b2 = ttk.Button(
         google_win_lf1, text='Google-Meet', command=google_win_b2_function)
@@ -64,7 +50,7 @@ def google_window():
 
     def google_win_b3_function():
         webbrowser.open('https://classroom.google.com/u/0/h')
-        speak('Opening google classroom sir')
+        
 
     google_win_b3 = ttk.Button(
         google_win_lf1, text='Google-Classroom', command=google_win_b3_function)
@@ -74,7 +60,7 @@ def google_window():
 
     def google_win_b4_function():
         webbrowser.open('https://mail.google.com/mail/u/0/#inbox')
-        speak('Opening gmail sir')
+        
 
     google_win_b4 = ttk.Button(
         google_win_lf1, text='G Mail', command=google_win_b4_function)
@@ -84,7 +70,7 @@ def google_window():
 
     def google_win_b5_function():
         webbrowser.open('https://docs.google.com/spreadsheets/u/0/')
-        speak('Opening google sheets sir')
+        
 
     google_win_b5 = ttk.Button(
         google_win_lf1, text='Google-Sheets', command=google_win_b5_function)
@@ -94,7 +80,7 @@ def google_window():
 
     def google_win_b6_function():
         webbrowser.open('https://photos.google.com/?pli=1')
-        speak('Opening google photos sir')
+        
 
     google_win_b6 = ttk.Button(
         google_win_lf1, text='Google-Photos', command=google_win_b6_function)
@@ -104,7 +90,7 @@ def google_window():
 
     def google_win_b7_function():
         webbrowser.open('https://www.google.com/maps')
-        speak('Opening google maps sir')
+        
 
     google_win_b7 = ttk.Button(
         google_win_lf1, text='Google-Maps', command=google_win_b7_function)
@@ -114,7 +100,7 @@ def google_window():
 
     def google_win_b8():
         webbrowser.open('https://docs.google.com/forms/u/0/')
-        speak('Opening google forms sir')
+        
 
     google_win_b8 = ttk.Button(
         google_win_lf1, text='Google-Forms', command=google_win_b8)
@@ -124,7 +110,7 @@ def google_window():
 
     def google_win_b9():
         webbrowser.open('https://calendar.google.com/calendar/u/0/r?pli=1')
-        speak('Opening google calendar')
+        
 
     google_win_b9 = ttk.Button(
         google_win_lf1, text='Google-Calendar', command=google_win_b9)
@@ -134,7 +120,7 @@ def google_window():
 
     def google_win_b10():
         webbrowser.open('https://docs.google.com/document/u/0/')
-        speak('Opening google docs sir')
+        
 
     google_win_b10 = ttk.Button(
         google_win_lf1, text='Google-Docs', command=google_win_b10)
@@ -144,7 +130,7 @@ def google_window():
 
     def google_win_b11():
         webbrowser.open('https://docs.google.com/presentation/u/0/')
-        speak('Opening google slides sir')
+        
 
     google_win_b11 = ttk.Button(
         google_win_lf1, text='Google-Slides', command=google_win_b11)
@@ -154,7 +140,7 @@ def google_window():
 
     def google_win_b12():
         webbrowser.open('https://drive.google.com/drive/my-drive')
-        speak('Opening google drive')
+        
 
     google_win_b12 = ttk.Button(
         google_win_lf1, text='Google-Drive', command=google_win_b12)

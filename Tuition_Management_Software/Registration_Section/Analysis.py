@@ -7,9 +7,7 @@ from Classes import *
 from tkinter import *
 from tkinter import ttk
 import threading
-import win32api
 import matplotlib.pyplot as plt
-import pyttsx3
 import time
 import pandas as pd
 
@@ -27,18 +25,6 @@ data = wks.get_all_values()
 headers = data.pop(0)
 
 table = pd.DataFrame(data, columns=headers)
-
-def speak(text, lock=lock):
-    def process(text, lock):  # In case any user operates program very fast and clicks records submit button , then an error can take place as no time.sleep has been put therefore if something is being spoken , then a runtime error can take place
-        print('Sleeping for 2 sec...')
-        time.sleep(2)
-        print('Woken sir ,feeling fresh now')
-        lock.acquire()
-        pyttsx3.speak(text)
-        lock.release()
-
-    threading.Thread(target=process, args=(text, lock)).start()
-
 
 def imports():
     global Calendar, DateEntry, datetime, pd, plt, string, os, pywhatkit
@@ -78,7 +64,7 @@ def registration_analysis():
     # Monthly analysis button program
     
     def reg_anal_b1_func():
-        speak('Performing Monthly Analysis sir')
+        
         table['Joining Date']=pd.to_datetime(table['Joining Date'])
         final_table=table.groupby(table['Joining Date'].dt.strftime('%B %Y'))
         dic={}
@@ -101,7 +87,7 @@ def registration_analysis():
     # Classwise analysis button program
     
     def reg_anal_b2_func():
-        speak('Performing classwise analysis sir')
+        
         unique_class=table.Class.unique()
         stu_count=[]
         for i in unique_class:
@@ -122,7 +108,7 @@ def registration_analysis():
     # Genderwise analysis button program
     
     def reg_anal_b3_func():
-        speak('Performing genderwise analysis sir')
+        
         graph=plt.bar(['Males', 'Females'], [len(table[table['Gender'] == 'Male'].index), len(
             table[table['Gender'] == 'Female'].index)])
         plt.title('Gender Analysis')

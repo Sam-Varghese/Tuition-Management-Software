@@ -4,22 +4,10 @@
 
 import time
 import threading
-import pyttsx3
-import win32api
 import datetime
 import webbrowser
-lock = threading.Lock()
-def speak(text, lock=lock):  # put thread locking as speak fuctions simultaneously executing produces errors
-
-    def process(text, lock):
-        lock.acquire()
-        pyttsx3.speak(text)
-        lock.release()
-
-    threading.Thread(target=process, args=(text, lock)).start()
-
 def password_entry():
-    speak('Running program security checks')
+    
     from Security_Section import Password_Entry
     Password_Entry.password()
 
@@ -36,23 +24,9 @@ from tkinter import *
 
 
 
-
-
-
-
-
-
-# Making a function to activate the speaking function of Speaker module and to put that in a separate thread as speak function is very slow
-
-
-
-
-
-
-
 # Preparing the main window
 
-speak('Welcome sir , nice to see you again')
+
 
 print('Preparing main window...')
 main_window = Tk()
@@ -71,7 +45,7 @@ def main_win_time():
 threading.Thread(target=main_win_time).start()
 
 def f5_b1_func():
-    speak('Opening calendar sir')
+    
     from Prog_Calendar import time_stamp
     time_stamp()
 
@@ -90,7 +64,7 @@ lf1.grid(row=2, column=0, padx=10, pady=10)
 
 
 def lf1_b1_function():
-    speak('Running registration button program sir')
+    
     print('Running register button program...')
     from Registration_Section import Register
     Register.register_names()
@@ -104,7 +78,7 @@ lf1_b1.pack(padx=5, pady=5)
 
 
 def lf1_b2_function():
-    speak('Running registration records program sir')
+    
     print('Running registration records button program...')
     from Registration_Section import Records
     Records.access_records()
@@ -118,7 +92,7 @@ lf1_b2.pack(padx=5, pady=5)
 
 
 def lf1_b3_function():
-    speak('Running registration analysis program sir')
+    
     print('Running registration analysis button program...')
     from Registration_Section import Analysis
     Analysis.registration_analysis()
@@ -157,7 +131,7 @@ lf3.grid(row=2, column=2, padx=10, pady=10)
 
 
 def lf3_b1_function():
-    speak('Running fee deposit program sir')
+    
     print('Running fee deposit button...')
     from Finance_Section import Deposits
     Deposits.record_deposits()
@@ -171,7 +145,7 @@ lf3_b1.pack(padx=5, pady=5)
 
 
 def lf3_b2_function():
-    speak('Running fee deposit program sir')
+    
     print('Running fee deposit records...')
     from Finance_Section import Records
     Records.deposit_records()
@@ -198,7 +172,7 @@ lf4.grid(row=3, column=1, padx=10, pady=10)
 
 
 def lf4_b1_function():
-    speak('Running google apps button sir')
+    
     print('Running google apps button...')
     from Extra_Softwares import Google
     Google.google_window()
@@ -213,7 +187,7 @@ lf4_b1.pack(padx=5, pady=5)
 def lf4_b2_function():
     
     webbrowser.open('https://www.youtube.com/')
-    speak('Opening YouTube sir')
+    
     print('Running YouTube apps button sir')
 
 lf4_b2 = ttk.Button(lf4, text='Youtube', command=lf4_b2_function)
@@ -223,7 +197,7 @@ lf4_b2.pack(padx=5, pady=5)
 
 
 def lf4_b3_function():
-    speak('Running geogebra apps button sir')
+    
     print('Running GeoGebra apps button...')
     from Extra_Softwares import GeoGebra
     GeoGebra.geogebra()
@@ -239,7 +213,7 @@ lf4_b3.pack(padx=5, pady=5)
 def lf4_b4_function():
 
     webbrowser.open('https://open.spotify.com/')
-    speak('Opening Spotify web player sir')
+    
     print('Running spotify button program...')
 
 
@@ -252,7 +226,7 @@ lf4_b4.pack(padx=5, pady=5)
 
 def main_win_b1_func():
 
-    speak('Had a great time with you sir , thanks for giving me a chance to serve you sir.')
+    
     main_window.destroy()
     print('\nTerminating the program...\n')
 
@@ -265,7 +239,7 @@ main_win_b1.grid(row=4, column=1, padx=5, pady=5)
 
 def main_win_b2_func():
 
-    speak('Had a great time with you sir , thanks for giving me a chance to serve you sir. Shutting laptop within 5 seconds')
+    
     pywhatkit.shutdown(time=5)
     print('\nShutting pc down...\n')
 

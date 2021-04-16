@@ -2,8 +2,6 @@
 
 # Importing necessary librariesthreading
 print('Importing necessary libraries for register button...')
-import pyttsx3
-import win32api
 from Classes import *
 from tkinter import ttk
 from tkinter import *
@@ -26,19 +24,6 @@ data = wks.get_all_values()
 headers = data.pop(0)
 
 table = pd.DataFrame(data, columns=headers)
-
-lock = threading.Lock()
-
-
-def speak(text, lock=lock):
-    def process(text, lock):
-        lock.acquire()
-        pyttsx3.speak(text)
-        lock.release()
-
-    threading.Thread(target=process, args=(text, lock)).start()
-
-
 
 def register_names():
 
@@ -75,8 +60,6 @@ def register_names():
                     if string.capwords(reg_e1.get()) in names:
                         print('Name repetetion detected')
                         reg_e1['bg'] = 'red'
-                        speak('This names has been taken sir')
-                        print('Speaking')
                         time.sleep(1)
 
                     else:
@@ -204,7 +187,7 @@ def register_names():
     def reg_b1_gui():
         from Registration_Section import Register_func
         Register_func.reg_func(string.capwords(reg_e1.get()), string.capwords(reg_e2.get()), string.capwords(reg_e3.get()), reg_e4.get(), reg_e5.get(), reg_e6.get().capitalize(), reg_combobox1.get(), reg_combobox2.get(), reg_e7.get(), cal.get())
-        speak('Submitted the registration data of '+reg_e1.get()+' sir')
+        
         register_names_window.destroy()
 
     reg_b1 = ttk.Button(register_names_window,

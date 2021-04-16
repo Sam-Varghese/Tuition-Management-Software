@@ -4,6 +4,7 @@
 from datetime import date
 from tkinter import *
 from tkinter import ttk
+import string
 import threading
 import time
 
@@ -61,8 +62,10 @@ class window():
                 box_text = box_name.get()
                 new_options = []
                 for i in options:
-                    if box_text in i:
-                        new_options.append(i)
+                    i = i.lower()
+                    box_text = box_text.lower()
+                    if i.startswith(box_text):
+                        new_options.append(string.capwords(i))
                 new_options.sort()
                 if new_options==[]:
                     new_options=['No similar name']

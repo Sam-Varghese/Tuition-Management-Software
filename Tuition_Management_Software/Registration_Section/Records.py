@@ -4,8 +4,6 @@
 from tkinter import ttk
 from Classes import *
 from tkinter import *
-import win32api
-import pyttsx3
 import pandas as pd
 import threading
 import time
@@ -26,19 +24,6 @@ headers = data.pop(0)
 table = pd.DataFrame(data, columns=headers)
 print('Table from records.py')
 print('Google data fetched')
-lock = threading.Lock()
-
-def speak(text, lock=lock):
-    def process(text, lock):
-        print('Sleeping for 1 sec...')
-        time.sleep(1)
-        print('Woken sir ,feeling fresh')
-        lock.acquire()
-        pyttsx3.speak(text)
-        lock.release()
-
-    threading.Thread(target=process, args=(text, lock)).start()
-
 
 def access_records():
 
@@ -96,7 +81,7 @@ def access_records():
             tb = Table(f1, dataframe=table.loc[table['Class'] == rec_class], showtoolbar=True, showstatusbar=True)
             tb.show()
             
-        speak('Analysing data for the selected option')
+        
 
     reg_rec_b1 = ttk.Button(reg_rec_lf1, text='Submit', command=reg_rec_b1_function)
     reg_rec_b1.grid(row=0, column=2)
