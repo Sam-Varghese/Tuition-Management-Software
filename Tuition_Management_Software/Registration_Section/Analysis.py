@@ -1,8 +1,7 @@
 # Python file containing program to analyse registration records
 
 # Importing necessary libraries
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+
 from Classes import *
 from tkinter import *
 from tkinter import ttk
@@ -14,17 +13,8 @@ import pandas as pd
 lock = threading.Lock()
 
 print('Importing necessary libraries for records button...')
-scope = ['https://spreadsheets.google.com/feeds',
-         'https://www.googleapis.com/auth/drive']
-credentials = ServiceAccountCredentials.from_json_keyfile_name(
-    'GSpread-2ecbd68261be.json', scope)
-gc = gspread.authorize(credentials)
-wks = gc.open('Students_Records').sheet1
 
-data = wks.get_all_values()
-headers = data.pop(0)
-
-table = pd.DataFrame(data, columns=headers)
+table = pd.read_excel("Students_Records.xlsx")
 
 def imports():
     global Calendar, DateEntry, datetime, pd, plt, string, os, pywhatkit

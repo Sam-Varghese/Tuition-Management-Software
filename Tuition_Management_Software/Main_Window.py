@@ -6,6 +6,14 @@ import time
 import threading
 import datetime
 import webbrowser
+import pandas as pd
+import string
+from tkcalendar import DateEntry
+from tkinter import *
+from tkinter import ttk
+from pandastable import Table
+import matplotlib.pyplot as plt
+
 def password_entry():
     
     from Security_Section import Password_Entry

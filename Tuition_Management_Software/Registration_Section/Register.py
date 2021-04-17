@@ -10,20 +10,11 @@ import time
 import string
 import threading
 from tkcalendar import DateEntry
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
 import pandas as pd
-scope = ['https://spreadsheets.google.com/feeds',
-         'https://www.googleapis.com/auth/drive']
-credentials = ServiceAccountCredentials.from_json_keyfile_name(
-    'GSpread-2ecbd68261be.json', scope)
-gc = gspread.authorize(credentials)
-wks = gc.open('Students_Records').sheet1
-
-data = wks.get_all_values()
-headers = data.pop(0)
-
-table = pd.DataFrame(data, columns=headers)
+try:
+    table = pd.read_excel('Students_Records.xlsx')
+except Exception:
+    table=pd.DataFrame({'Name':[],'Class':[],'School':[],'EMail ID':[],'Contact Number':[],'Remarks':[],'Deposit Pattern':[],'Gender':[],'Total Fee':[],'Joining Date':[]})
 
 def register_names():
 
@@ -154,6 +145,7 @@ def register_names():
 
     reg_combobox2 = ttk.Combobox(reg_lf1, textvariable=reg_combobox2_variable)
     reg_combobox2_gui = window.combobox(reg_combobox2, options, 7, 1)
+
 
     # Preparing labels and entry boxes for fees to be deposited
 

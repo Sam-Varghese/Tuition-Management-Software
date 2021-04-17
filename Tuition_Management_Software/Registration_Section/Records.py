@@ -8,22 +8,9 @@ import pandas as pd
 import threading
 import time
 from pandastable import Table
-from oauth2client.service_account import ServiceAccountCredentials
-import gspread
-print('Importing necessary libraries for records button...')
-scope = ['https://spreadsheets.google.com/feeds',
-         'https://www.googleapis.com/auth/drive']
-credentials = ServiceAccountCredentials.from_json_keyfile_name(
-    'GSpread-2ecbd68261be.json', scope)
-gc = gspread.authorize(credentials)
-wks = gc.open('Students_Records').sheet1
 
-data = wks.get_all_values()
-headers = data.pop(0)
-
-table = pd.DataFrame(data, columns=headers)
+table = pd.read_excel('Students_Records.xlsx')
 print('Table from records.py')
-print('Google data fetched')
 
 def access_records():
 
@@ -73,8 +60,7 @@ def access_records():
         if reg_rec_combobox1.get() in classes:
             
             try:
-                #rec_class = int(reg_rec_combobox1.get())
-                rec_class = reg_rec_combobox1.get()
+                rec_class = int(reg_rec_combobox1.get())
             except Exception:
                 rec_class = reg_rec_combobox1.get()
             

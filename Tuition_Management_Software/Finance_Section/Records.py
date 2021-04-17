@@ -9,18 +9,8 @@ from tkinter import ttk
 from tkinter import *
 import pandas as pd
 from pandastable import Table
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
-scope = ['https://spreadsheets.google.com/feeds',
-         'https://www.googleapis.com/auth/drive']
-credentials = ServiceAccountCredentials.from_json_keyfile_name(
-    'GSpread-2ecbd68261be.json', scope)
-gc = gspread.authorize(credentials)
-wks = gc.open('Students_Records').worksheet('Sheet2')
 
-data = wks.get_all_values()
-headers = data.pop(0)
-table = pd.DataFrame(data, columns=headers)
+table = pd.read_excel('Deposit_Records.xlsx')
 
 def imports():
     global Calendar, DateEntry, datetime, pd, plt, string, os, pywhatkit
@@ -76,7 +66,10 @@ def deposit_records():
         f1.grid(row=2, column=0, columnspan=3, padx=10, pady=10)
         
         if depo_rec_combobox1.get() in classes:
-            real_class = depo_rec_combobox1.get()
+            try: 
+                real_class=int(depo_rec_combobox1.get())
+            except Exception:
+                real_class = depo_rec_combobox1.get()
                 
             tb=Table(f1, dataframe=table[table['Class']==real_class], showtoolbar=True, showstatusbar=True)
             tb.show()

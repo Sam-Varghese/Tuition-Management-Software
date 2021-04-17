@@ -3,8 +3,6 @@
 # Importing necessary libraries
 from tkinter import *
 import threading
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
 from tkcalendar import  DateEntry
 import string
 import pandas as pd
@@ -14,33 +12,10 @@ from tkinter import ttk
 
 from Classes import *
 
-
-scope = ['https://spreadsheets.google.com/feeds',
-         'https://www.googleapis.com/auth/drive']
-credentials = ServiceAccountCredentials.from_json_keyfile_name(
-    'GSpread-2ecbd68261be.json', scope)
-gc = gspread.authorize(credentials)
-wks = gc.open('Students_Records').sheet1
-
-data = wks.get_all_values()
-headers = data.pop(0)
-
-table = pd.DataFrame(data, columns=headers)
-
-wks = gc.open('Students_Records').worksheet('Sheet2')
-
-data = wks.get_all_values()
-headers = data.pop(0)
-
-wks = gc.open('Students_Records').worksheet('Sheet2')
-
-data = wks.get_all_values()
-headers = data.pop(0)
-
-sh = gc.open('Students_Records')
-
-worksheet = sh.get_worksheet(1)
-
+try:
+    table = pd.read_excel('Students_Records.xlsx')
+except Exception:
+    table = pd.DataFrame({'Name':[],'Class':[],'Fee Deposited':[],'Deposition Date':[],'School':[],'EMail ID':[],'Contact Number':[],'Remarks':[],'Deposit Pattern':[],'Gender':[],'Total Fee':[],'Joining Date':[]})
 
 def record_deposits():
     rec_depo=Tk()
@@ -138,7 +113,6 @@ def record_deposits():
 
         
         new_table.reset_index(inplace=True)
-        worksheet.update([new_table.columns.values.tolist()]+new_table.values.tolist())
     
         new_table.to_excel('Deposit_Records.xlsx')
         print('All data saved successfully sir.')
