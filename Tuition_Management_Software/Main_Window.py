@@ -52,13 +52,19 @@ def f5_b1_func():
 f5_b1=ttk.Button(f5, text='Calendar', command=f5_b1_func)
 f5_b1.grid(row=1, column=1, padx=5, pady=5)
 
+def sync():
+    from load import syncing
+    syncing()
+
+sync_b1=ttk.Button(main_window, text='Sync', command=sync)
+sync_b1.grid(row=2, column=1, padx=5, pady=5)
 
 # Making label frames for putting buttons
 
 # LabelFrame lf1 for registration section
 
 lf1 = LabelFrame(main_window, text='Registration Department', relief='groove', bd=10)
-lf1.grid(row=2, column=0, padx=10, pady=10)
+lf1.grid(row=3, column=0, padx=10, pady=10)
 
 # Program for registration button
 
@@ -105,7 +111,7 @@ lf1_b3.pack(padx=5, pady=5)
 # LabelFrame lf2 for attendance section
 
 lf2 = LabelFrame(main_window, text='Attendance Department', relief='groove', bd=10)
-lf2.grid(row=2, column=1, padx=10, pady=10)
+lf2.grid(row=3, column=1, padx=10, pady=10)
 
 # Program for attendance button
 
@@ -125,7 +131,7 @@ lf2_b3.pack(padx=5, pady=5)
 # LabelFrame lf3 for finance section
 
 lf3 = LabelFrame(main_window, text='Finance Department', relief='groove', bd=10)
-lf3.grid(row=2, column=2, padx=10, pady=10)
+lf3.grid(row=3, column=2, padx=10, pady=10)
 
 # Program for deposit section
 
@@ -166,7 +172,7 @@ lf3_b3.pack(padx=5, pady=5)
 # LabelFrame lf4 for other extra softwares
 
 lf4 = LabelFrame(main_window, text='Important Softwares', relief='groove', bd=10)
-lf4.grid(row=3, column=1, padx=10, pady=10)
+lf4.grid(row=4, column=1, padx=10, pady=10)
 
 # Program for Google
 
@@ -232,7 +238,7 @@ def main_win_b1_func():
 
 
 main_win_b1 = ttk.Button(main_window, text='Exit', command=main_win_b1_func)
-main_win_b1.grid(row=4, column=1, padx=5, pady=5)
+main_win_b1.grid(row=5, column=1, padx=5, pady=5)
 
 # Program for shut down button
 
@@ -246,7 +252,7 @@ def main_win_b2_func():
 
 main_win_b2 = ttk.Button(main_window, text='Shut Down',
                          command=main_win_b2_func)
-main_win_b2.grid(row=5, column=1, padx=5, pady=5)
+main_win_b2.grid(row=6, column=1, padx=5, pady=5)
 
 
 # Putting window in mainloop
