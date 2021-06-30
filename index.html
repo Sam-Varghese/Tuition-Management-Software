@@ -16,13 +16,38 @@
     />
   </head>
   <body>
-    <img
-      src="Images/menu.svg"
-      height="40"
-      width="50"
-      id="left-menu"
-      onmouseover="display_side_nav()"
-    />
+    <div class="menu-bar">
+      <div class="menu-bar-items">
+        <img
+          src="Images/menu.svg"
+          height="40"
+          width="50"
+          id="left-menu"
+          onmouseover="display_side_nav()"
+        />
+      </div>
+      <div class="menu-bar-items">
+        <img src="Images/calendar.svg" height="40" width="50" />
+      </div>
+      <div class="menu-bar-items">
+        <img src="Images/power.svg" height="40" width="50" />
+      </div>
+      <div class="menu-bar-items">
+        <img src="Images/setting.svg" height="40" width="50" />
+      </div>
+      <div class="menu-bar-items">
+        <img src="Images/event.svg" height="40" width="50" />
+      </div>
+      <div class="menu-bar-items">
+        <img src="Images/video.svg" height="40" width="50" />
+      </div>
+      <div class="menu-bar-items">
+        <img src="Images/information.svg" height="40" width="50" />
+      </div>
+      <div class="menu-bar-items">
+        <img src="Images/search.svg" height="40" width="50" />
+      </div>
+    </div>
 
     <main>
       <div
@@ -31,12 +56,24 @@
         onmouseout="hide_side_nav()"
         onmouseover="display_side_nav()"
       >
-        <a href="#"><img src="Images/registration.svg" height="40" width="50"> Registration</a>
-        <a href="#"><img src="Images/attendance.svg" height="40" width="50"> Attendance</a>
-        <a href="#"><img src="Images/deposits.svg" height="40" width="50"> Deposits</a>
-        <a href="#"><img src="Images/defaults.svg" height="40" width="50"> Defaults</a>
-        <a href="#"><img src="Images/dashboard.svg" height="40" width="50"> Dashboard</a>
-        
+        <a href="#"
+          ><img src="Images/registration.svg" height="40" width="50" />
+          Registration</a
+        >
+        <a href="#"
+          ><img src="Images/attendance.svg" height="40" width="50" />
+          Attendance</a
+        >
+        <a href="#"
+          ><img src="Images/deposits.svg" height="40" width="50" /> Deposits</a
+        >
+        <a href="#"
+          ><img src="Images/defaults.svg" height="40" width="50" /> Defaults</a
+        >
+        <a href="#"
+          ><img src="Images/dashboard.svg" height="40" width="50" />
+          Dashboard</a
+        >
       </div>
 
       <section class="glassy">
@@ -56,5 +93,6 @@
         }
       </script>
     </main>
+    <div id="power-button"><img src="Images/power.svg" height="40" width="50" /></div>
   </body>
 </html>
