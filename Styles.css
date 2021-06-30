@@ -101,7 +101,6 @@ main {
   transition: all;
   transition-duration: 1s;
   border: 2px ridge white;
-
 }
 
 .menu-bar-items:hover {
@@ -126,5 +125,9 @@ main {
 .right-menu-bar-items:hover {
   padding-top: 25px;
   padding-bottom: 25px;
+  background-color: white;
+}
+
+#power-button img:hover{
   background-color: white;
 }
