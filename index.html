@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paul Classes</title>
+    <link rel="stylesheet" type="text/css" href="Styles.css" />
+
+    <!-- Glass heading style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <img
+      src="Images/menu.svg"
+      height="40"
+      width="50"
+      id="left-menu"
+      onmouseover="display_side_nav()"
+    />
+
+    <main>
+      <div
+        class="sidenav"
+        id="side-nav"
+        onmouseout="hide_side_nav()"
+        onmouseover="display_side_nav()"
+      >
+        <a href="#"><img src="Images/registration.svg" height="40" width="50"> Registration</a>
+        <a href="#"><img src="Images/attendance.svg" height="40" width="50"> Attendance</a>
+        <a href="#"><img src="Images/deposits.svg" height="40" width="50"> Deposits</a>
+        <a href="#"><img src="Images/defaults.svg" height="40" width="50"> Defaults</a>
+        <a href="#"><img src="Images/dashboard.svg" height="40" width="50"> Dashboard</a>
+        
+      </div>
+
+      <section class="glassy">
+        <h1 align="center" class="glassy-heading">Paul Classes</h1>
+      </section>
+
+      <script>
+        document.getElementById("side-nav").style.display = "none";
+        function hide_side_nav() {
+          document.getElementById("side-nav").style.display = "none";
+          document.getElementById("left-menu").style.display = "inline";
+        }
+
+        function display_side_nav() {
+          document.getElementById("side-nav").style.display = "inline";
+          document.getElementById("left-menu").style.display = "none";
+        }
+      </script>
+    </main>
+  </body>
+</html>
