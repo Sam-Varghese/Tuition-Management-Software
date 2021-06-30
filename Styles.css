@@ -7,6 +7,7 @@
 body {
   background-image: url("Images/bg1.jpg");
   background-size: cover;
+  overflow-y: hidden;
   
 }
 
@@ -55,7 +56,7 @@ main {
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 80px;
-  color: rgb(35, 12, 245);
+  color: black;
 }
 
 .sidenav {
@@ -83,7 +84,14 @@ main {
   position: absolute;
   width: 100vw;
   margin-top: 10px;
-  background-color:rgba(234, 243, 243, 0.6);
+  background-color:rgba(68, 224, 224, 0.6);
+  border: 2px ridge white;
+
+}
+
+.menu-bar-items{
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 #power-button {
@@ -92,8 +100,31 @@ main {
   background-color: rgba(68, 224, 224, 0.6);
   transition: all;
   transition-duration: 1s;
+  border: 2px ridge white;
+
 }
 
 .menu-bar-items:hover {
+  background-color: white;
+}
+
+.right-menu-bar {
+  position: absolute;
+  float: right;
+  bottom: 0;
+  right:0;
+  background-color: rgba(68, 224, 224, 0.6);
+  border-radius: 20px;
+  border: 2px ridge white;
+}
+
+.right-menu-bar-items {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.right-menu-bar-items:hover {
+  padding-top: 25px;
+  padding-bottom: 25px;
   background-color: white;
 }
