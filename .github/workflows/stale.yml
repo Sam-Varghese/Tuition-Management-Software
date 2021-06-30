@@ -1,0 +1,19 @@
+name: Mark stale issues and pull requests
+
+on:
+  schedule:
+  - cron: "30 1 * * *"
+
+jobs:
+  stale:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/stale@v3
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        stale-issue-message: 'Sorry, but I think nobody is showing intrest to work upon this issue. You are requested to please close this issue if you think this is a very minor issue and is insignificant for devlopment of this software. We are very sorry for not working on this issue, but we believe that next time you would surely raise a genuine important issue. Thanks for spending your precious time for advancement of this project'
+        stale-pr-message: 'Sorry, but I think that maintainers are not showing intrest to work upon your pull request. If you think this PR is insignificant and wont do much of the advancement to this project, then please close it so that this repo might not get cluttered with unmerged PR. We are sorry for not working upon this PR , but we believe that next time you would surely come up with a great PR which would take this project to a yet another level.'
+        stale-issue-label: 'no-issue-activity'
+        stale-pr-label: 'no-pr-activity'

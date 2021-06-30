@@ -1,0 +1,8 @@
+# This file contains libraries upon which this project has been made
+
+pandas  # pip install pandas
+matplotlib  # pip install matplotlib
+pywhatkit  # pip install pywhatkit
+pyttsx3
+pywin32
+os
