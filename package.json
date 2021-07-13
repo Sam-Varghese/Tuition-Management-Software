@@ -1,0 +1,22 @@
+{
+  "name": "tuition-management-software",
+  "version": "1.0.0",
+  "description": "This is for the management of tuitions",
+  "main": "Backend.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sam-Varghese/Tuition-Management-Software.git"
+  },
+  "author": "Sam-Varghese",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sam-Varghese/Tuition-Management-Software/issues"
+  },
+  "homepage": "https://github.com/Sam-Varghese/Tuition-Management-Software#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

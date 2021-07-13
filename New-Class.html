@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paul Classes</title>
+    <link rel="stylesheet" type="text/css" href="Styles.css" />
+
+    <!-- Glass heading style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Castoro&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon icon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon_package_v0.16/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon_package_v0.16/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon_package_v0.16/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon_package_v0.16/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="favicon_package_v0.16/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body>
+    <div class="right-menu-bar">
+      <div class="right-menu-bar-items">
+        <abbr title="Information"
+          ><img src="Images/information.svg" height="40" width="50"
+        /></abbr>
+      </div>
+      <div class="right-menu-bar-items">
+        <abbr title="Information"
+          ><img src="Images/timer-off.svg" height="40" width="50"
+        /></abbr>
+      </div>
+      <div class="right-menu-bar-items">
+        <abbr title="Information"
+          ><img src="Images/alarm-off.svg" height="40" width="50"
+        /></abbr>
+      </div>
+      <div class="right-menu-bar-items">
+        <abbr title="Seacrh"
+          ><img src="Images/search.svg" height="40" width="50"
+        /></abbr>
+      </div>
+      <div class="right-menu-bar-items">
+        <abbr title="Settings"
+          ><img src="Images/setting.svg" height="40" width="50"
+        /></abbr>
+      </div>
+      <div class="right-menu-bar-items">
+        <abbr title="Security"
+          ><img src="Images/security.svg" height="40" width="50"
+        /></abbr>
+      </div>
+      <div class="right-menu-bar-items">
+        <abbr title="Accounts"
+          ><img src="Images/account.svg" height="40" width="50"
+        /></abbr>
+      </div>
+      <div class="right-menu-bar-items">
+        <abbr title="New release"
+          ><img src="Images/new-release.svg" height="40" width="50"
+        /></abbr>
+      </div>
+      <div class="right-menu-bar-items">
+        <abbr title="Battery level normal"
+          ><img src="Images/battery-good.svg" height="40" width="50"
+        /></abbr>
+      </div>
+    </div>
+    <div class="menu-bar">
+      <div class="menu-bar-items">
+        <img
+          src="Images/menu.svg"
+          height="40"
+          width="50"
+          id="left-menu"
+          onmouseover="display_side_nav()"
+        />
+      </div>
+      <div class="menu-bar-items">
+        <abbr title="Calendar today"
+          ><img src="Images/calendar.svg" height="40" width="50"
+        /></abbr>
+      </div>
+      <div class="menu-bar-items">
+        <abbr title="Classroom"
+          ><img src="Images/class.svg" height="40" width="50"
+        /></abbr>
+      </div>
+      <div class="menu-bar-items">
+        <abbr title="WhatsApp"
+          ><img src="Images/whatsapp.svg" height="40" width="50"
+        /></abbr>
+      </div>
+
+      <div class="menu-bar-items">
+        <abbr title="EMail"
+          ><img src="Images/email.svg" height="40" width="50"
+        /></abbr>
+      </div>
+      <div class="menu-bar-items">
+        <abbr title="Instant meeting"
+          ><img src="Images/video.svg" height="45" width="50"
+        /></abbr>
+      </div>
+      <div class="menu-bar-items">
+        <abbr title="Facebook"
+          ><img src="Images/facebook.svg" height="40" width="50"
+        /></abbr>
+      </div>
+    </div>
+
+    <main>
+      <div
+        class="sidenav"
+        id="side-nav"
+        onmouseout="hide_side_nav()"
+        onmouseover="display_side_nav()"
+      >
+        <a href="Registration.html"
+          ><img src="Images/registration.svg" height="40" width="50" />
+          Registration</a
+        >
+        <a href="#"
+          ><img src="Images/attendance.svg" height="40" width="50" />
+          Attendance</a
+        >
+        <a href="#"
+          ><img src="Images/deposits.svg" height="40" width="50" /> Deposits</a
+        >
+        <a href="#"
+          ><img src="Images/defaults.svg" height="40" width="50" /> Defaults</a
+        >
+        <a href="#"
+          ><img src="Images/dashboard.svg" height="40" width="50" />
+          Dashboard</a
+        >
+      </div>
+
+      <section class="glassy">
+
+        <h1 align="center" class="glassy-heading">New Class</h1>
+
+        <form action="/new-class" id="class-form" method="POST">
+          <label for="Class_Name">Name of the class</label><br />
+          <input type="text" id="Class_Name" /><br />
+
+          <label for="Class_Description">Description of the class: </label
+          ><br />
+          <input type="text" id="Class_Description" /><br />
+
+          <label for="img1">Enter the links: </label
+          ><img
+            src="Images/add.svg"
+            alt=""
+            id="img1"
+            onclick="add_input_field()"
+          /><br />
+
+          <div class="block-element"><input type="submit" class="submit-button" onclick="submitting()"></div>
+        </form>
+      </section>
+
+      <script>
+        document.getElementById("side-nav").style.display = "none";
+        function hide_side_nav() {
+          document.getElementById("side-nav").style.display = "none";
+          document.getElementById("left-menu").style.display = "inline";
+        }
+
+        function display_side_nav() {
+          document.getElementById("side-nav").style.display = "inline";
+          document.getElementById("left-menu").style.display = "none";
+        }
+
+        var initialId = 1;
+
+
+        function add_input_field() {
+          var node = document.createElement("input");
+
+          node.setAttribute("id", initialId);
+          initialId+=1;
+
+          document
+            .getElementById("class-form")
+            .insertBefore(
+              node,
+              document.getElementById("class-form").childNodes[16]
+            );
+        }
+
+      </script>
+    </main>
+    <div id="power-button">
+      <abbr title="Power button"
+        ><img src="Images/power.svg" height="40" width="50"
+      /></abbr>
+    </div>
+  </body>
+</html>
